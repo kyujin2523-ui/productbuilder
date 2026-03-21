@@ -458,6 +458,15 @@ input[type="text"]::placeholder { color: #bbb; }
   color: var(--pink);
 }
 
+/* ── AdSense ── */
+.ad-wrap {
+  margin: 20px 0;
+  text-align: center;
+  min-height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 /* ── Disqus ── */
 .disqus-section {
   margin-top: 28px;

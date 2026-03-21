@@ -1,14 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>사다리 타기</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <h1>사다리 타기</h1>
+
+    <div id="setup" class="setup">
+      <div class="input-section">
+        <h2>참가자</h2>
+        <div id="players-input">
+          <div class="input-row">
+            <input type="text" class="player-input" placeholder="참가자 이름" />
+            <button class="remove-btn" onclick="removeRow(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addPlayer()">+ 참가자 추가</button>
+      </div>
+
+      <div class="input-section">
+        <h2>결과</h2>
+        <div id="results-input">
+          <div class="input-row">
+            <input type="text" class="result-input" placeholder="결과 항목" />
+            <button class="remove-btn" onclick="removeRow(this)">✕</button>
+          </div>
+        </div>
+        <button class="add-btn" onclick="addResult()">+ 결과 추가</button>
+      </div>
+
+      <button class="start-btn" onclick="startGame()">사다리 생성</button>
+    </div>
+
+    <div id="game" class="game hidden">
+      <div class="ladder-wrapper">
+        <div id="player-labels" class="labels top-labels"></div>
+        <canvas id="ladder-canvas"></canvas>
+        <div id="result-labels" class="labels bottom-labels"></div>
+      </div>
+      <div class="game-buttons">
+        <button class="run-btn" onclick="runAll()">전체 결과 보기</button>
+        <button class="reset-btn" onclick="resetGame()">다시 설정</button>
+      </div>
+      <div id="results-display" class="results-display hidden"></div>
+    </div>
+  </div>
+
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>

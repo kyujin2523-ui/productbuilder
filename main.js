@@ -11,6 +11,7 @@ const LANGS = {
     runAll: '✨ 전체 결과 보기', finalResult: '🏆 최종 결과',
     toastPlayers: '참가자를 2명 이상 입력해주세요.',
     toastResults: '결과를 2명 이상 입력해주세요.',
+    comments: '💬 댓글',
     font: "'Noto Sans KR', sans-serif", htmlLang: 'ko',
   },
   en: {
@@ -24,6 +25,7 @@ const LANGS = {
     runAll: '✨ Reveal All', finalResult: '🏆 Final Results',
     toastPlayers: 'Please enter at least 2 players.',
     toastResults: 'Please enter at least 2 prizes.',
+    comments: '💬 Comments',
     font: "'Segoe UI', sans-serif", htmlLang: 'en',
   },
   zh: {
@@ -37,6 +39,7 @@ const LANGS = {
     runAll: '✨ 查看全部结果', finalResult: '🏆 最终结果',
     toastPlayers: '请输入至少2名参与者。',
     toastResults: '请输入至少2个奖项。',
+    comments: '💬 评论',
     font: "'Noto Sans SC', sans-serif", htmlLang: 'zh',
   },
   ja: {
@@ -50,6 +53,7 @@ const LANGS = {
     runAll: '✨ 全結果を表示', finalResult: '🏆 最終結果',
     toastPlayers: '参加者を2名以上入力してください。',
     toastResults: '結果を2件以上入力してください。',
+    comments: '💬 コメント',
     font: "'Noto Sans JP', sans-serif", htmlLang: 'ja',
   },
 };

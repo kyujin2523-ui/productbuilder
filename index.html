@@ -110,6 +110,20 @@
         <h3 class="results-title" data-i18n="finalResult">🏆 최종 결과</h3>
         <div id="results-list"></div>
       </div>
+
+      <div class="disqus-section card">
+        <h3 class="disqus-title" data-i18n="comments">💬 댓글</h3>
+        <div id="disqus_thread"></div>
+        <script>
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://productbuilder-efdkuvocpv.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
     </div>
 
   </div>

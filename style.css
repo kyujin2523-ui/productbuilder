@@ -458,6 +458,19 @@ input[type="text"]::placeholder { color: #bbb; }
   color: var(--pink);
 }
 
+/* ── Disqus ── */
+.disqus-section {
+  margin-top: 28px;
+  padding: 28px;
+}
+.disqus-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--purple-dark);
+  margin-bottom: 20px;
+}
+#disqus_thread { min-height: 100px; }
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .page { padding: 24px 14px 60px; }

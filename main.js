@@ -1,84 +1,208 @@
-const COLORS = ['#667eea','#f5576c','#43e97b','#f093fb','#4facfe','#fa709a','#a18cd1','#fccb90'];
-const LINE_COLOR = '#c4b5e8';
-const BRIDGE_COLOR = '#a78bd4';
-const PATH_COLOR = '#ff6b6b';
+const COLORS = [
+  'linear-gradient(135deg,#667eea,#764ba2)',
+  'linear-gradient(135deg,#f5576c,#f093fb)',
+  'linear-gradient(135deg,#4facfe,#00f2fe)',
+  'linear-gradient(135deg,#43e97b,#38f9d7)',
+  'linear-gradient(135deg,#fa709a,#fee140)',
+  'linear-gradient(135deg,#a18cd1,#fbc2eb)',
+  'linear-gradient(135deg,#fccb90,#d57eeb)',
+  'linear-gradient(135deg,#84fab0,#8fd3f4)',
+];
+const STROKE_COLORS = ['#667eea','#f5576c','#4facfe','#43e97b','#fa709a','#a18cd1','#fccb90','#84fab0'];
 
-let players = [];
-let results = [];
-let bridges = []; // bridges[col] = array of row indices where horizontal bridge starts
-let colX = [];
-let rowY = [];
+const LINE_COLOR   = '#ddd6fe';
+const BRIDGE_COLOR = '#c4b5f4';
+let PADDING_X = 60, PADDING_Y = 10;
 let ROWS = 12;
+let players = [], results = [], bridges = [];
+let colX = [], rowY = [];
 let canvasW, canvasH;
-let PADDING_X = 50;
-let PADDING_Y = 20;
 let animating = false;
-let revealedPaths = []; // which player indices have been revealed
+let revealedPaths = [];
+
+/* ── Input helpers ── */
+function updateCounts() {
+  document.getElementById('player-count').textContent =
+    document.querySelectorAll('.player-input').length;
+  document.getElementById('result-count').textContent =
+    document.querySelectorAll('.result-input').length;
+}
+
+function renumberRows(listId, numClass) {
+  document.querySelectorAll(`#${listId} .${numClass}`).forEach((el, i) => {
+    el.textContent = i + 1;
+  });
+}
 
 function addPlayer() {
+  const list = document.getElementById('players-input');
+  const n = list.children.length + 1;
   const div = document.createElement('div');
   div.className = 'input-row';
-  div.innerHTML = `<input type="text" class="player-input" placeholder="참가자 이름" /><button class="remove-btn" onclick="removeRow(this)">✕</button>`;
-  document.getElementById('players-input').appendChild(div);
+  div.innerHTML = `
+    <span class="row-num">${n}</span>
+    <input type="text" class="player-input" placeholder="이름 입력" />
+    <button class="remove-btn" onclick="removeRow(this,'player')">✕</button>`;
+  list.appendChild(div);
+  div.querySelector('input').focus();
+  updateCounts();
 }
 
 function addResult() {
+  const list = document.getElementById('results-input');
+  const n = list.children.length + 1;
   const div = document.createElement('div');
   div.className = 'input-row';
-  div.innerHTML = `<input type="text" class="result-input" placeholder="결과 항목" /><button class="remove-btn" onclick="removeRow(this)">✕</button>`;
-  document.getElementById('results-input').appendChild(div);
+  div.innerHTML = `
+    <span class="row-num result-num">${n}</span>
+    <input type="text" class="result-input" placeholder="결과 입력" />
+    <button class="remove-btn" onclick="removeRow(this,'result')">✕</button>`;
+  list.appendChild(div);
+  div.querySelector('input').focus();
+  updateCounts();
 }
 
-function removeRow(btn) {
+function removeRow(btn, type) {
   btn.parentElement.remove();
+  if (type === 'player') renumberRows('players-input', 'row-num');
+  else renumberRows('results-input', 'result-num');
+  updateCounts();
 }
 
+/* ── Game start ── */
 function startGame() {
-  players = [...document.querySelectorAll('.player-input')]
-    .map(i => i.value.trim()).filter(v => v);
-  results = [...document.querySelectorAll('.result-input')]
-    .map(i => i.value.trim()).filter(v => v);
+  players = [...document.querySelectorAll('.player-input')].map(i => i.value.trim()).filter(Boolean);
+  results = [...document.querySelectorAll('.result-input')].map(i => i.value.trim()).filter(Boolean);
 
-  if (players.length < 2) return alert('참가자를 2명 이상 입력해주세요.');
-  if (results.length < 2) return alert('결과를 2명 이상 입력해주세요.');
+  if (players.length < 2) return showToast('참가자를 2명 이상 입력해주세요.');
+  if (results.length < 2) return showToast('결과를 2명 이상 입력해주세요.');
 
-  // Align counts
   while (results.length < players.length) results.push('?');
-  while (players.length < results.length) results.pop();
+  results = results.slice(0, players.length);
 
   revealedPaths = [];
   generateLadder();
-  renderSetupLabels();
+  buildLabels();
+
   document.getElementById('setup').classList.add('hidden');
   document.getElementById('game').classList.remove('hidden');
   document.getElementById('results-display').classList.add('hidden');
-  document.getElementById('results-display').innerHTML = '';
-  drawLadder();
+  document.getElementById('results-list').innerHTML = '';
+
+  requestAnimationFrame(() => drawLadder());
 }
 
+function resetGame() {
+  document.getElementById('setup').classList.remove('hidden');
+  document.getElementById('game').classList.add('hidden');
+}
+
+/* ── Ladder logic ── */
 function generateLadder() {
   const cols = players.length;
   ROWS = Math.max(10, cols * 3);
-  bridges = Array.from({length: cols - 1}, () => []);
-
+  bridges = Array.from({ length: cols - 1 }, () => []);
   for (let row = 0; row < ROWS; row++) {
     let col = 0;
     while (col < cols - 1) {
-      if (Math.random() < 0.35) {
-        // Check no adjacent bridge at same row
-        if (col === 0 || !bridges[col-1].includes(row)) {
-          bridges[col].push(row);
-          col += 2; // skip next col to avoid overlap
-          continue;
-        }
-      }
-      col++;
+      if (Math.random() < 0.38 && (col === 0 || !bridges[col - 1].includes(row))) {
+        bridges[col].push(row);
+        col += 2;
+      } else col++;
     }
   }
 }
 
-function renderSetupLabels() {
+function tracePath(startCol) {
+  let col = startCol;
+  const path = [{ col, row: 0 }];
+  for (let row = 0; row < ROWS - 1; row++) {
+    if (col < players.length - 1 && bridges[col].includes(row)) col++;
+    else if (col > 0 && bridges[col - 1].includes(row)) col--;
+    path.push({ col, row: row + 1 });
+  }
+  return path;
+}
+
+/* ── Canvas ── */
+function getCanvasSize() {
+  const wrapper = document.querySelector('.ladder-wrapper');
   const cols = players.length;
+  canvasW = Math.max(cols * 90 + PADDING_X * 2, wrapper.clientWidth - 4);
+  canvasH = 380;
+}
+
+function computeGrid() {
+  const cols = players.length;
+  const colSpacing = (canvasW - PADDING_X * 2) / (cols - 1);
+  colX = Array.from({ length: cols }, (_, i) => PADDING_X + i * colSpacing);
+  const rowSpacing = (canvasH - PADDING_Y * 2) / (ROWS - 1);
+  rowY = Array.from({ length: ROWS }, (_, i) => PADDING_Y + i * rowSpacing);
+}
+
+function drawLadder(highlights) {
+  getCanvasSize();
+  const canvas = document.getElementById('ladder-canvas');
+  canvas.width  = canvasW;
+  canvas.height = canvasH;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvasW, canvasH);
+  computeGrid();
+
+  // vertical lines
+  const cols = players.length;
+  for (let c = 0; c < cols; c++) {
+    ctx.strokeStyle = LINE_COLOR;
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(colX[c], rowY[0]);
+    ctx.lineTo(colX[c], rowY[ROWS - 1]);
+    ctx.stroke();
+  }
+
+  // bridges
+  for (let c = 0; c < cols - 1; c++) {
+    bridges[c].forEach(row => {
+      ctx.strokeStyle = BRIDGE_COLOR;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(colX[c], rowY[row]);
+      ctx.lineTo(colX[c + 1], rowY[row]);
+      ctx.stroke();
+    });
+  }
+
+  // highlight paths
+  if (highlights) highlights.forEach(({ path, color }) => renderPath(ctx, path, color));
+
+  syncLabels();
+}
+
+function renderPath(ctx, path, color) {
+  ctx.save();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 5;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.shadowColor = color;
+  ctx.shadowBlur = 10;
+  ctx.beginPath();
+  path.forEach((pt, i) => {
+    const x = colX[pt.col], y = rowY[pt.row];
+    if (i === 0) { ctx.moveTo(x, y); return; }
+    const prev = path[i - 1];
+    if (prev.col !== pt.col) {
+      ctx.lineTo(colX[prev.col], rowY[pt.row]);
+    }
+    ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.restore();
+}
+
+/* ── Labels ── */
+function buildLabels() {
   const playerDiv = document.getElementById('player-labels');
   const resultDiv = document.getElementById('result-labels');
   playerDiv.innerHTML = '';
@@ -88,7 +212,7 @@ function renderSetupLabels() {
     const item = document.createElement('div');
     item.className = 'label-item';
     item.id = `player-label-${i}`;
-    item.innerHTML = `<div class="label-box" style="background:linear-gradient(135deg,${COLORS[i%COLORS.length]},${COLORS[(i+1)%COLORS.length]})">${name}</div>`;
+    item.innerHTML = `<div class="label-chip" style="background:${COLORS[i % COLORS.length]}">${name}</div>`;
     item.onclick = () => runPlayer(i);
     playerDiv.appendChild(item);
   });
@@ -97,228 +221,105 @@ function renderSetupLabels() {
     const item = document.createElement('div');
     item.className = 'label-item';
     item.id = `result-label-${i}`;
-    item.innerHTML = `<div class="result-box">${res}</div>`;
+    item.innerHTML = `<div class="result-chip">${res}</div>`;
     resultDiv.appendChild(item);
   });
 }
 
-function getCanvasSize() {
-  const wrapper = document.querySelector('.ladder-wrapper');
-  const cols = players.length;
-  const minW = cols * 80 + PADDING_X * 2;
-  canvasW = Math.max(minW, wrapper.clientWidth - 20);
-  canvasH = 400;
-}
-
-function drawLadder(highlightPaths) {
-  getCanvasSize();
-  const canvas = document.getElementById('ladder-canvas');
-  canvas.width = canvasW;
-  canvas.height = canvasH;
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvasW, canvasH);
-
-  const cols = players.length;
-  const colSpacing = (canvasW - PADDING_X * 2) / (cols - 1);
-  colX = Array.from({length: cols}, (_, i) => PADDING_X + i * colSpacing);
-  const rowSpacing = (canvasH - PADDING_Y * 2) / (ROWS - 1);
-  rowY = Array.from({length: ROWS}, (_, i) => PADDING_Y + i * rowSpacing);
-
-  // Draw vertical lines
-  ctx.lineWidth = 3;
-  for (let c = 0; c < cols; c++) {
-    ctx.strokeStyle = LINE_COLOR;
-    ctx.beginPath();
-    ctx.moveTo(colX[c], rowY[0]);
-    ctx.lineTo(colX[c], rowY[ROWS-1]);
-    ctx.stroke();
-  }
-
-  // Draw horizontal bridges
-  ctx.lineWidth = 3;
-  for (let c = 0; c < cols - 1; c++) {
-    bridges[c].forEach(row => {
-      ctx.strokeStyle = BRIDGE_COLOR;
-      ctx.beginPath();
-      ctx.moveTo(colX[c], rowY[row]);
-      ctx.lineTo(colX[c+1], rowY[row]);
-      ctx.stroke();
-    });
-  }
-
-  // Draw highlighted paths
-  if (highlightPaths) {
-    highlightPaths.forEach(({path, color}) => drawPath(ctx, path, color));
-  }
-
-  // Update label positions
-  syncLabelPositions();
-}
-
-function syncLabelPositions() {
-  const cols = players.length;
+function syncLabels() {
   const playerLabels = document.getElementById('player-labels');
   const resultLabels = document.getElementById('result-labels');
   playerLabels.style.width = canvasW + 'px';
   resultLabels.style.width = canvasW + 'px';
 
-  const labelItems = playerLabels.querySelectorAll('.label-item');
-  labelItems.forEach((item, i) => {
-    item.style.position = 'absolute';
-    item.style.left = (colX[i] - 40) + 'px';
-    item.style.width = '80px';
-    item.style.textAlign = 'center';
+  playerLabels.querySelectorAll('.label-item').forEach((item, i) => {
+    item.style.left = colX[i] + 'px';
+    item.style.top  = '4px';
   });
-
-  const resultItems = resultLabels.querySelectorAll('.label-item');
-  resultItems.forEach((item, i) => {
-    item.style.position = 'absolute';
-    item.style.left = (colX[i] - 40) + 'px';
-    item.style.width = '80px';
-    item.style.textAlign = 'center';
+  resultLabels.querySelectorAll('.label-item').forEach((item, i) => {
+    item.style.left = colX[i] + 'px';
+    item.style.top  = '4px';
   });
-
-  playerLabels.style.position = 'relative';
-  playerLabels.style.height = '50px';
-  resultLabels.style.position = 'relative';
-  resultLabels.style.height = '50px';
 }
 
-function tracePath(startCol) {
-  let col = startCol;
-  const path = [{col, row: 0}];
-
-  for (let row = 0; row < ROWS - 1; row++) {
-    // Check if bridge goes right from col
-    if (col < players.length - 1 && bridges[col].includes(row)) {
-      col++;
-    } else if (col > 0 && bridges[col-1].includes(row)) {
-      col--;
-    }
-    path.push({col, row: row + 1});
-  }
-  return path;
-}
-
-function drawPath(ctx, path, color) {
-  ctx.save();
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 5;
-  ctx.shadowColor = color;
-  ctx.shadowBlur = 8;
-  ctx.lineCap = 'round';
-  ctx.lineJoin = 'round';
-  ctx.beginPath();
-
-  path.forEach((pt, i) => {
-    const x = colX[pt.col];
-    const y = rowY[pt.row];
-    if (i === 0) ctx.moveTo(x, y);
-    else {
-      const prev = path[i-1];
-      if (prev.col !== pt.col) {
-        // horizontal move: draw H-line at prev row level first then go down is already handled
-        // path records each step separately
-        ctx.lineTo(colX[prev.col], rowY[pt.row]);
-        ctx.lineTo(x, y);
-      } else {
-        ctx.lineTo(x, y);
-      }
-    }
-  });
-  ctx.stroke();
-  ctx.restore();
-}
-
+/* ── Animation ── */
 function animatePath(path, color, onDone) {
-  const canvas = document.getElementById('ladder-canvas');
-  const ctx = canvas.getContext('2d');
+  const ctx = document.getElementById('ladder-canvas').getContext('2d');
   let step = 0;
-
   function frame() {
-    // Redraw base ladder with all revealed paths
-    drawLadder(revealedPaths.map(pi => ({path: tracePath(pi), color: COLORS[pi % COLORS.length] + 'aa'})));
-
-    // Draw current animating path up to step
-    const partial = path.slice(0, step + 1);
-    drawPath(ctx, partial, color);
-
-    if (step < path.length - 1) {
-      step++;
-      setTimeout(frame, 30);
-    } else {
-      if (onDone) onDone();
-    }
+    drawLadder(revealedPaths.map(pi => ({
+      path: tracePath(pi),
+      color: STROKE_COLORS[pi % STROKE_COLORS.length] + '99'
+    })));
+    renderPath(ctx, path.slice(0, step + 1), color);
+    if (step < path.length - 1) { step++; setTimeout(frame, 28); }
+    else if (onDone) onDone();
   }
   frame();
 }
 
 function runPlayer(playerIdx) {
-  if (animating) return;
-  if (revealedPaths.includes(playerIdx)) return;
-
+  if (animating || revealedPaths.includes(playerIdx)) return;
   animating = true;
-  const path = tracePath(playerIdx);
-  const color = COLORS[playerIdx % COLORS.length];
-
+  const path  = tracePath(playerIdx);
+  const color = STROKE_COLORS[playerIdx % STROKE_COLORS.length];
   animatePath(path, color, () => {
     revealedPaths.push(playerIdx);
     animating = false;
-
     const endCol = path[path.length - 1].col;
-    // Highlight result label
-    const resultItem = document.getElementById(`result-label-${endCol}`);
-    if (resultItem) resultItem.classList.add('revealed');
-
-    // Show result in list
-    showResultRow(players[playerIdx], results[endCol], color);
+    document.getElementById(`result-label-${endCol}`)?.classList.add('revealed');
+    addResultRow(players[playerIdx], results[endCol], playerIdx);
   });
 }
 
 function runAll() {
   if (animating) return;
   const remaining = players.map((_, i) => i).filter(i => !revealedPaths.includes(i));
-  if (remaining.length === 0) return;
-
-  function runNext(idx) {
+  if (!remaining.length) return;
+  function next(idx) {
     if (idx >= remaining.length) return;
     const pi = remaining[idx];
     animating = true;
-    const path = tracePath(pi);
-    const color = COLORS[pi % COLORS.length];
+    const path  = tracePath(pi);
+    const color = STROKE_COLORS[pi % STROKE_COLORS.length];
     animatePath(path, color, () => {
       revealedPaths.push(pi);
       animating = false;
       const endCol = path[path.length - 1].col;
-      const resultItem = document.getElementById(`result-label-${endCol}`);
-      if (resultItem) resultItem.classList.add('revealed');
-      showResultRow(players[pi], results[endCol], color);
-      setTimeout(() => runNext(idx + 1), 200);
+      document.getElementById(`result-label-${endCol}`)?.classList.add('revealed');
+      addResultRow(players[pi], results[endCol], pi);
+      setTimeout(() => next(idx + 1), 250);
     });
   }
-  runNext(0);
+  next(0);
 }
 
-function showResultRow(name, prize, color) {
+function addResultRow(name, prize, playerIdx) {
   const display = document.getElementById('results-display');
   display.classList.remove('hidden');
-  if (!display.querySelector('h3')) {
-    const h3 = document.createElement('h3');
-    h3.textContent = '결과';
-    display.prepend(h3);
-  }
 
-  const row = document.createElement('div');
+  const color = STROKE_COLORS[playerIdx % STROKE_COLORS.length];
+  const bg    = COLORS[playerIdx % COLORS.length];
+  const row   = document.createElement('div');
   row.className = 'result-row';
+  row.style.animationDelay = (revealedPaths.length * 0.05) + 's';
   row.innerHTML = `
-    <span class="name" style="color:${color}">${name}</span>
-    <span class="arrow">▶</span>
-    <span class="prize">${prize}</span>
-  `;
-  display.appendChild(row);
+    <span class="player-chip" style="background:${bg}">${name}</span>
+    <span class="arrow-icon">▶</span>
+    <span class="prize-text">${prize}</span>`;
+  document.getElementById('results-list').appendChild(row);
 }
 
-function resetGame() {
-  document.getElementById('setup').classList.remove('hidden');
-  document.getElementById('game').classList.add('hidden');
+/* ── Toast ── */
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  Object.assign(t.style, {
+    position:'fixed', bottom:'30px', left:'50%', transform:'translateX(-50%)',
+    background:'#333', color:'#fff', padding:'12px 24px', borderRadius:'12px',
+    fontSize:'0.9rem', fontFamily:'inherit', zIndex:'9999',
+    animation:'fadeIn 0.3s ease', boxShadow:'0 4px 20px rgba(0,0,0,0.2)'
+  });
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2500);
 }

@@ -4,52 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>사다리 타기</title>
-  <link href='/style.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>사다리 타기</h1>
 
-    <div id="setup" class="setup">
-      <div class="input-section">
-        <h2>참가자</h2>
-        <div id="players-input">
-          <div class="input-row">
-            <input type="text" class="player-input" placeholder="참가자 이름" />
-            <button class="remove-btn" onclick="removeRow(this)">✕</button>
-          </div>
-        </div>
-        <button class="add-btn" onclick="addPlayer()">+ 참가자 추가</button>
-      </div>
-
-      <div class="input-section">
-        <h2>결과</h2>
-        <div id="results-input">
-          <div class="input-row">
-            <input type="text" class="result-input" placeholder="결과 항목" />
-            <button class="remove-btn" onclick="removeRow(this)">✕</button>
-          </div>
-        </div>
-        <button class="add-btn" onclick="addResult()">+ 결과 추가</button>
-      </div>
-
-      <button class="start-btn" onclick="startGame()">사다리 생성</button>
-    </div>
-
-    <div id="game" class="game hidden">
-      <div class="ladder-wrapper">
-        <div id="player-labels" class="labels top-labels"></div>
-        <canvas id="ladder-canvas"></canvas>
-        <div id="result-labels" class="labels bottom-labels"></div>
-      </div>
-      <div class="game-buttons">
-        <button class="run-btn" onclick="runAll()">전체 결과 보기</button>
-        <button class="reset-btn" onclick="resetGame()">다시 설정</button>
-      </div>
-      <div id="results-display" class="results-display hidden"></div>
-    </div>
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
   </div>
 
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="page">
+
+    <!-- SETUP -->
+    <div id="setup">
+      <header class="hero">
+        <div class="hero-icon">🪜</div>
+        <h1>사다리 타기</h1>
+        <p class="hero-sub">참가자와 결과를 입력하고 운명의 사다리를 타보세요</p>
+      </header>
+
+      <div class="card setup-card">
+        <div class="columns">
+          <div class="col">
+            <div class="col-header">
+              <span class="col-icon player-icon">👤</span>
+              <h2>참가자</h2>
+              <span class="count-badge" id="player-count">1</span>
+            </div>
+            <div id="players-input" class="input-list">
+              <div class="input-row">
+                <span class="row-num">1</span>
+                <input type="text" class="player-input" placeholder="이름 입력" />
+                <button class="remove-btn" onclick="removeRow(this, 'player')">✕</button>
+              </div>
+            </div>
+            <button class="add-btn" onclick="addPlayer()">
+              <span class="add-icon">＋</span> 참가자 추가
+            </button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="col">
+            <div class="col-header">
+              <span class="col-icon result-icon">🎁</span>
+              <h2>결과</h2>
+              <span class="count-badge result-badge" id="result-count">1</span>
+            </div>
+            <div id="results-input" class="input-list">
+              <div class="input-row">
+                <span class="row-num result-num">1</span>
+                <input type="text" class="result-input" placeholder="결과 입력" />
+                <button class="remove-btn" onclick="removeRow(this, 'result')">✕</button>
+              </div>
+            </div>
+            <button class="add-btn result-add" onclick="addResult()">
+              <span class="add-icon">＋</span> 결과 추가
+            </button>
+          </div>
+        </div>
+
+        <button class="start-btn" onclick="startGame()">
+          <span>사다리 생성하기</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- GAME -->
+    <div id="game" class="hidden">
+      <header class="game-header">
+        <div class="hero-icon small">🪜</div>
+        <h1>사다리 타기</h1>
+        <button class="ghost-btn" onclick="resetGame()">↩ 다시 설정</button>
+      </header>
+
+      <div class="card ladder-card">
+        <p class="hint">참가자 이름을 클릭하면 개별 결과를 확인할 수 있어요</p>
+        <div class="ladder-wrapper">
+          <div id="player-labels" class="labels top-labels"></div>
+          <canvas id="ladder-canvas"></canvas>
+          <div id="result-labels" class="labels bottom-labels"></div>
+        </div>
+      </div>
+
+      <div class="game-actions">
+        <button class="run-btn" onclick="runAll()">
+          ✨ 전체 결과 보기
+        </button>
+      </div>
+
+      <div id="results-display" class="results-display hidden">
+        <h3 class="results-title">🏆 최종 결과</h3>
+        <div id="results-list"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script defer src="main.js"></script>
 </body>
 </html>

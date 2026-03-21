@@ -1,3 +1,98 @@
+/* ── i18n ── */
+const LANGS = {
+  ko: {
+    title: '사다리 타기',
+    subtitle: '참가자와 결과를 입력하고 운명의 사다리를 타보세요',
+    players: '참가자', results: '결과',
+    playerPlaceholder: '이름 입력', resultPlaceholder: '결과 입력',
+    addPlayer: '참가자 추가', addResult: '결과 추가',
+    startBtn: '사다리 생성하기', resetBtn: '↩ 다시 설정',
+    hint: '참가자 이름을 클릭하면 개별 결과를 확인할 수 있어요',
+    runAll: '✨ 전체 결과 보기', finalResult: '🏆 최종 결과',
+    toastPlayers: '참가자를 2명 이상 입력해주세요.',
+    toastResults: '결과를 2명 이상 입력해주세요.',
+    font: "'Noto Sans KR', sans-serif", htmlLang: 'ko',
+  },
+  en: {
+    title: 'Ladder Game',
+    subtitle: 'Enter players and prizes, then ride the ladder of fate!',
+    players: 'Players', results: 'Prizes',
+    playerPlaceholder: 'Enter name', resultPlaceholder: 'Enter prize',
+    addPlayer: 'Add Player', addResult: 'Add Prize',
+    startBtn: 'Generate Ladder', resetBtn: '↩ Reset',
+    hint: 'Click a player name to reveal their result individually',
+    runAll: '✨ Reveal All', finalResult: '🏆 Final Results',
+    toastPlayers: 'Please enter at least 2 players.',
+    toastResults: 'Please enter at least 2 prizes.',
+    font: "'Segoe UI', sans-serif", htmlLang: 'en',
+  },
+  zh: {
+    title: '抽签游戏',
+    subtitle: '输入参与者和奖项，开始命运之旅！',
+    players: '参与者', results: '奖项',
+    playerPlaceholder: '输入姓名', resultPlaceholder: '输入奖项',
+    addPlayer: '添加参与者', addResult: '添加奖项',
+    startBtn: '生成阶梯', resetBtn: '↩ 重置',
+    hint: '点击参与者名字可单独查看结果',
+    runAll: '✨ 查看全部结果', finalResult: '🏆 最终结果',
+    toastPlayers: '请输入至少2名参与者。',
+    toastResults: '请输入至少2个奖项。',
+    font: "'Noto Sans SC', sans-serif", htmlLang: 'zh',
+  },
+  ja: {
+    title: 'あみだくじ',
+    subtitle: '参加者と結果を入力して、運命のはしごを引こう！',
+    players: '参加者', results: '結果',
+    playerPlaceholder: '名前を入力', resultPlaceholder: '結果を入力',
+    addPlayer: '参加者を追加', addResult: '結果を追加',
+    startBtn: 'はしごを生成', resetBtn: '↩ 設定に戻る',
+    hint: '参加者の名前をクリックして個別に結果を確認できます',
+    runAll: '✨ 全結果を表示', finalResult: '🏆 最終結果',
+    toastPlayers: '参加者を2名以上入力してください。',
+    toastResults: '結果を2件以上入力してください。',
+    font: "'Noto Sans JP', sans-serif", htmlLang: 'ja',
+  },
+};
+
+let currentLang = 'ko';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = LANGS[lang];
+  document.documentElement.lang = t.htmlLang;
+  document.body.style.fontFamily = t.font;
+
+  // text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // page title
+  document.title = t.title;
+
+  // active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem('ladder-lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('ladder-lang') || 'ko';
+  setLang(saved);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+});
+
 const COLORS = [
   'linear-gradient(135deg,#667eea,#764ba2)',
   'linear-gradient(135deg,#f5576c,#f093fb)',
@@ -41,7 +136,7 @@ function addPlayer() {
   div.className = 'input-row';
   div.innerHTML = `
     <span class="row-num">${n}</span>
-    <input type="text" class="player-input" placeholder="이름 입력" />
+    <input type="text" class="player-input" data-i18n-placeholder="playerPlaceholder" placeholder="${LANGS[currentLang].playerPlaceholder}" />
     <button class="remove-btn" onclick="removeRow(this,'player')">✕</button>`;
   list.appendChild(div);
   div.querySelector('input').focus();
@@ -55,7 +150,7 @@ function addResult() {
   div.className = 'input-row';
   div.innerHTML = `
     <span class="row-num result-num">${n}</span>
-    <input type="text" class="result-input" placeholder="결과 입력" />
+    <input type="text" class="result-input" data-i18n-placeholder="resultPlaceholder" placeholder="${LANGS[currentLang].resultPlaceholder}" />
     <button class="remove-btn" onclick="removeRow(this,'result')">✕</button>`;
   list.appendChild(div);
   div.querySelector('input').focus();
@@ -74,8 +169,8 @@ function startGame() {
   players = [...document.querySelectorAll('.player-input')].map(i => i.value.trim()).filter(Boolean);
   results = [...document.querySelectorAll('.result-input')].map(i => i.value.trim()).filter(Boolean);
 
-  if (players.length < 2) return showToast('참가자를 2명 이상 입력해주세요.');
-  if (results.length < 2) return showToast('결과를 2명 이상 입력해주세요.');
+  if (players.length < 2) return showToast(LANGS[currentLang].toastPlayers);
+  if (results.length < 2) return showToast(LANGS[currentLang].toastResults);
 
   while (results.length < players.length) results.push('?');
   results = results.slice(0, players.length);

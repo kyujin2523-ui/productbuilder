@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Ladder Game - Origins, Mathematical Principles, and Digital Advantages</title>
+  <meta name="description" content="Learn about the origins and history of the ladder game (Amidakuji), its mathematical fairness principles, advantages of digital ladder games, and comparisons with other drawing methods." />
+  <meta name="keywords" content="ladder game about, amidakuji, ladder history, ladder math, fair drawing, 사다리타기 소개" />
+  <meta name="author" content="ProductBuilder" />
+  <meta property="og:title" content="About Ladder Game - Origins, Mathematical Principles, and Digital Advantages" />
+  <meta property="og:description" content="Learn about the origins and history of the ladder game, its mathematical fairness principles, and the advantages of digital ladder games." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7362975376492503"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <!-- Language switcher -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ko">한국어</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="ja">日本語</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">🪜 사다리 타기</a>
+      <ul class="nav-links">
+        <li><a href="about.html">소개</a></li>
+        <li><a href="guide.html">활용 가이드</a></li>
+        <li><a href="tips.html">추첨 팁</a></li>
+        <li><a href="faq-detail.html">FAQ</a></li>
+        <li><a href="privacy.html">개인정보처리방침</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- Korean -->
+    <div data-lang="ko">
+      <div class="card policy-card">
+        <h1 class="policy-title">🪜 사다리 타기 소개</h1>
+        <div class="policy-body">
+
+          <h2>사다리 타기의 기원과 역사</h2>
+          <p>사다리 타기는 일본에서 유래한 전통적인 추첨 방법으로, 일본어로는 '아미다쿠지(あみだくじ)'라고 불립니다. '아미다'는 아미타불(阿弥陀仏)을 뜻하며, 사다리의 가로선이 아미타불의 후광에서 뻗어 나오는 광선을 닮았다는 데에서 이름이 유래했습니다. 원래 일본의 무로마치 시대(室町時代, 1336~1573년)에 처음 등장했으며, 당시에는 부채꼴 모양의 선을 그려 추첨하는 방식이었습니다.</p>
+          <p>시간이 흐르면서 부채꼴 형태는 세로줄과 가로줄로 구성된 현재의 사다리 형태로 발전했습니다. 이 방법은 한국에 전해진 후 '사다리 타기'라는 이름으로 정착되어 학교, 직장, 모임 등 일상 곳곳에서 공정한 추첨이 필요할 때 널리 사용되고 있습니다. 전통적으로는 종이에 세로선을 긋고 참가자들이 돌아가며 가로선을 추가한 뒤 종이의 윗부분을 접어 가로선을 가린 상태에서 각자 하나의 세로줄을 선택하는 방식으로 진행되었습니다.</p>
+          <p>20세기 후반 컴퓨터와 인터넷이 보급되면서 사다리 타기도 디지털 형태로 진화했습니다. 종이와 펜 없이도 웹 브라우저나 모바일 앱에서 간편하게 사다리를 생성하고 결과를 확인할 수 있게 되었으며, 애니메이션 효과를 통해 경로를 시각적으로 추적하는 재미까지 더해졌습니다. 오늘날 사다리 타기는 한국과 일본을 넘어 전 세계에서 사용되는 공정한 무작위 배정 도구로 자리잡고 있습니다.</p>
+
+          <h2>수학적 원리</h2>
+          <p>사다리 타기의 공정성은 수학적으로 엄밀하게 증명됩니다. 사다리 타기의 핵심 원리는 <strong>순열(permutation)</strong> 이론에 기반합니다. n명의 참가자가 있을 때, 사다리 타기는 n개의 원소로 이루어진 순열 중 하나를 생성하는 것과 동일합니다. 각 가로선은 인접한 두 세로줄의 위치를 교환하는 <strong>전치(transposition)</strong> 연산에 해당합니다.</p>
+          <p>대수학(代數學)에서 잘 알려진 정리에 따르면, 임의의 순열은 인접 전치(adjacent transposition)의 합성으로 표현할 수 있습니다. 이것이 바로 사다리 타기가 모든 가능한 결과 배정을 생성할 수 있다는 수학적 근거입니다. 즉, n명의 참가자에 대해 가능한 n!(n 팩토리얼)가지의 모든 순열이 사다리 타기를 통해 실현될 수 있습니다.</p>
+          <p>가로선이 충분히 많고 무작위로 배치된다면 각 순열이 나타날 확률은 균등하게 분포합니다. 예를 들어 참가자가 3명인 경우, 가능한 결과는 3! = 6가지이며 각각 약 16.7%의 확률로 나타나게 됩니다. 4명이면 4! = 24가지, 5명이면 5! = 120가지의 결과가 동일한 확률로 생성됩니다. 이러한 수학적 구조 덕분에 사다리 타기는 단순한 놀이가 아니라 <strong>수학적으로 공정성이 보장된 추첨 도구</strong>입니다.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div data-lang="en" style="display:none;">
+      <div class="card policy-card">
+        <h1 class="policy-title">🪜 About Ladder Game</h1>
+        <div class="policy-body">
+
+          <h2>Origins and History of the Ladder Game</h2>
+          <p>The ladder game is a traditional drawing method that originated in Japan, where it is known as "Amidakuji" (あみだくじ). The name "Amida" refers to Amitabha Buddha (阿弥陀仏), as the horizontal rungs of the ladder were thought to resemble rays of light emanating from the Buddha's halo. The game first appeared during Japan's Muromachi period (1336–1573), originally taking the form of fan-shaped lines drawn for a lottery.</p>
+          <p>Over time, the fan-shaped design evolved into the modern ladder format consisting of vertical and horizontal lines. After being introduced to Korea, the game became known as "Sadari Tagi" (ladder climbing) and is now widely used in schools, workplaces, and social gatherings whenever a fair drawing is needed. Traditionally, vertical lines were drawn on paper, participants took turns adding horizontal rungs, the top of the paper was folded to hide the rungs, and each person chose one vertical line.</p>
+          <p>With the spread of computers and the internet in the late 20th century, the ladder game evolved into digital form. Today, you can easily create a ladder and view results in a web browser or mobile app without needing paper and pen, and animated path tracing adds an element of excitement. The ladder game has now grown beyond Korea and Japan to become a fair random assignment tool used around the world.</p>
+
+          <h2>Mathematical Principles</h2>
+          <p>The fairness of the ladder game is rigorously proven through mathematics. At its core, the ladder game is based on <strong>permutation</strong> theory. With n participants, a ladder game generates one of the possible permutations of n elements. Each horizontal rung corresponds to a <strong>transposition</strong> operation that swaps the positions of two adjacent vertical lines.</p>
+          <p>A well-known theorem in algebra states that any permutation can be expressed as a composition of adjacent transpositions. This is the mathematical basis for why the ladder game can produce every possible outcome assignment. In other words, for n participants, all n! (n factorial) permutations can be realized through the ladder game.</p>
+          <p>When enough horizontal rungs are placed randomly, each permutation appears with equal probability. For example, with 3 participants there are 3! = 6 possible outcomes, each occurring with roughly a 16.7% chance. With 4 participants there are 4! = 24 outcomes, and with 5 there are 5! = 120 — all equally likely. Thanks to this mathematical structure, the ladder game is not just a simple pastime but a <strong>drawing tool with mathematically guaranteed fairness</strong>.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Chinese (Simplified) -->
+    <div data-lang="zh" style="display:none;">
+      <div class="card policy-card">
+        <h1 class="policy-title">🪜 关于抽签梯子游戏</h1>
+        <div class="policy-body">
+
+          <h2>梯子游戏的起源与历史</h2>
+          <p>梯子游戏是一种源自日本的传统抽签方式，日语中称为"阿弥陀签"（あみだくじ）。"阿弥陀"指的是阿弥陀佛（阿弥陀仏），因为梯子上的横线酷似从佛像光环中散射出的光线而得名。该游戏最早出现在日本室町时代（1336～1573年），最初以扇形线条进行抽签。</p>
+          <p>随着时间的推移，扇形结构逐渐演变为由纵线和横线构成的现代梯子形式。传入韩国后，这种方法被称为"爬梯子"，在学校、职场和各种聚会中被广泛用于需要公平抽签的场合。传统做法是在纸上画出纵线，参与者轮流添加横线，然后将纸的上方折叠起来遮住横线，每人选择一条纵线。</p>
+          <p>20世纪后半叶，随着计算机和互联网的普及，梯子游戏也进化为数字形式。无需纸笔，只要通过浏览器或手机应用即可轻松生成梯子并查看结果，动画路径追踪更增添了趣味性。如今，梯子游戏已超越韩国和日本，成为一种在全球广泛使用的公平随机分配工具。</p>
+
+          <h2>数学原理</h2>
+          <p>梯子游戏的公平性可以通过数学严格证明。其核心原理基于<strong>排列（permutation）</strong>理论。当有 n 位参与者时，梯子游戏相当于生成 n 个元素的一种排列。每条横线对应一次<strong>对换（transposition）</strong>运算，即交换相邻两条纵线的位置。</p>
+          <p>代数学中有一个著名定理：任何排列都可以表示为相邻对换的复合。这就是梯子游戏能够产生所有可能结果分配的数学依据。也就是说，对于 n 位参与者，所有 n!（n 的阶乘）种排列都可以通过梯子游戏实现。</p>
+          <p>当横线足够多且随机分布时，每种排列出现的概率是均等的。例如，3 位参与者有 3! = 6 种可能的结果，每种约有 16.7% 的概率出现；4 位有 4! = 24 种，5 位有 5! = 120 种，概率均相同。正是这种数学结构，使得梯子游戏不仅仅是一个简单的游戏，更是一种<strong>数学上保证公平的抽签工具</strong>。</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Japanese -->
+    <div data-lang="ja" style="display:none;">
+      <div class="card policy-card">
+        <h1 class="policy-title">🪜 あみだくじについて</h1>
+        <div class="policy-body">
+
+          <h2>あみだくじの起源と歴史</h2>
+          <p>あみだくじは日本発祥の伝統的なくじ引き方法です。「あみだ」は阿弥陀仏に由来し、はしごの横線が阿弥陀仏の後光から放たれる光線に似ていることから名付けられました。室町時代（1336～1573年）に初めて登場し、当初は扇形の線を描いてくじを引く方式でした。</p>
+          <p>時代とともに扇形から、縦線と横線で構成される現在のはしご型へと発展しました。韓国に伝わった後は「サダリタギ（はしご登り）」として定着し、学校や職場、集まりなど、公平なくじ引きが必要なあらゆる場面で広く使われています。伝統的なやり方では、紙に縦線を引き、参加者が順番に横線を加え、紙の上部を折って横線を隠した状態でそれぞれが縦線を一本選びます。</p>
+          <p>20世紀後半にコンピュータとインターネットが普及すると、あみだくじもデジタル化しました。紙とペンがなくても、ウェブブラウザやモバイルアプリで簡単にはしごを作成し、結果を確認できるようになり、アニメーションによる経路追跡で楽しさも加わりました。現在、あみだくじは韓国と日本を超え、世界中で使われる公平なランダム割り当てツールとなっています。</p>
+
+          <h2>数学的原理</h2>
+          <p>あみだくじの公平性は数学的に厳密に証明されています。その核心は<strong>順列（permutation）</strong>理論に基づいています。参加者が n 人の場合、あみだくじは n 個の要素からなる順列の一つを生成することに相当します。各横線は、隣り合う2本の縦線の位置を入れ替える<strong>互換（transposition）</strong>演算に対応しています。</p>
+          <p>代数学のよく知られた定理によれば、任意の順列は隣接互換の合成として表現できます。これが、あみだくじがすべての可能な結果の割り当てを生成できるという数学的根拠です。つまり、n 人の参加者に対して、n!（n の階乗）通りのすべての順列があみだくじで実現可能です。</p>
+          <p>横線が十分に多くランダムに配置されていれば、各順列が現れる確率は均等に分布します。例えば参加者が3人の場合、結果は 3! = 6 通りで、それぞれ約 16.7% の確率で出現します。4人なら 4! = 24 通り、5人なら 5! = 120 通りの結果が同じ確率で生成されます。この数学的構造のおかげで、あみだくじは単なる遊びではなく、<strong>数学的に公平性が保証されたくじ引きツール</strong>なのです。</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- AD unit between content sections -->
+    <div class="ad-wrap">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7362975376492503"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Korean -->
+    <div data-lang="ko">
+      <div class="card policy-card">
+        <div class="policy-body">
+
+          <h2>디지털 사다리 타기의 장점</h2>
+          <p>전통적인 종이 사다리 타기와 비교했을 때, 디지털 사다리 타기는 여러 가지 뚜렷한 장점을 가지고 있습니다.</p>
+          <ul>
+            <li><strong>조작 불가능한 무작위성:</strong> 컴퓨터의 난수 생성기(RNG, Random Number Generator)를 사용하여 가로선을 배치하기 때문에 사람이 의도적으로 특정 결과를 만들어내는 것이 불가능합니다. 종이 사다리에서는 가로선을 그리는 사람이 결과를 예측하거나 유도할 여지가 있지만, 디지털 방식에서는 이러한 조작 가능성이 원천적으로 차단됩니다.</li>
+            <li><strong>대규모 그룹 지원:</strong> 종이에 사다리를 그릴 때는 참가자가 많아지면 공간이 부족하고 선이 복잡해져 실수가 발생하기 쉽습니다. 디지털 사다리는 참가자 수에 관계없이 깔끔하게 표시되며, 스크롤이나 화면 조정을 통해 몇 명이든 수용할 수 있습니다.</li>
+            <li><strong>시각적 애니메이션 효과:</strong> 각 참가자의 경로를 애니메이션으로 실시간 추적할 수 있어 결과가 어떻게 결정되는지 시각적으로 확인하는 재미가 있습니다. 이 과정은 사다리 타기의 흥미와 긴장감을 극대화합니다.</li>
+            <li><strong>언제 어디서나 접근 가능:</strong> 인터넷이 연결된 기기라면 PC, 태블릿, 스마트폰 어디에서든 즉시 사다리 타기를 실행할 수 있습니다. 종이와 펜을 준비할 필요 없이 URL만 공유하면 모든 참가자가 동시에 결과를 확인할 수 있습니다.</li>
+            <li><strong>즉각적인 재추첨:</strong> 결과가 마음에 들지 않거나 조건이 변경된 경우, 버튼 하나로 새로운 사다리를 즉시 생성할 수 있습니다. 종이 사다리처럼 처음부터 다시 그릴 필요가 없습니다.</li>
+          </ul>
+
+          <h2>다른 추첨 방법과의 비교</h2>
+          <p>공정한 추첨이 필요한 상황에서 사다리 타기 외에도 다양한 방법이 사용됩니다. 각 방법의 특징을 비교해 보겠습니다.</p>
+          <ul>
+            <li><strong>동전 던지기:</strong> 가장 단순한 추첨 방법이지만, 앞면과 뒷면 두 가지 결과만 가능하므로 2명 이상의 참가자가 있을 때는 사용하기 어렵습니다. 여러 번 반복해야 하므로 시간이 오래 걸리고 과정이 번거롭습니다.</li>
+            <li><strong>제비뽑기(추첨):</strong> 종이를 접어 상자에 넣고 하나씩 뽑는 전통적인 방식입니다. 공정하지만 물리적 준비물(종이, 펜, 상자)이 필요하고, 원격으로 참여하는 사람은 참가할 수 없습니다. 또한 뽑기 순서에 따른 심리적 부담이 생길 수 있습니다.</li>
+            <li><strong>무작위 번호 생성기:</strong> 컴퓨터로 랜덤 숫자를 뽑는 방식은 정확하고 빠르지만, 과정이 즉각적이어서 추첨의 재미와 긴장감이 없습니다. 사다리 타기는 경로를 따라가는 시각적 과정이 있어 참가자들에게 흥미와 몰입감을 제공합니다.</li>
+            <li><strong>주사위:</strong> 1~6까지의 숫자로 제한되며, 참가자가 6명을 초과하면 사용하기 불편합니다. 물리적 주사위가 필요하다는 점도 디지털 환경에서는 단점이 됩니다.</li>
+          </ul>
+          <p>종합적으로, 사다리 타기는 <strong>수학적 공정성</strong>, <strong>시각적 재미</strong>, <strong>참가 인원의 유연성</strong>을 모두 갖춘 추첨 방법입니다. 지금 바로 <a href="/">사다리 타기</a>를 체험해 보세요! 더 다양한 활용법은 <a href="guide.html">활용 가이드</a>에서, 공정한 추첨을 위한 노하우는 <a href="tips.html">추첨 팁</a>에서 확인할 수 있습니다.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div data-lang="en" style="display:none;">
+      <div class="card policy-card">
+        <div class="policy-body">
+
+          <h2>Advantages of the Digital Ladder Game</h2>
+          <p>Compared to the traditional paper-based ladder game, the digital version offers several distinct advantages.</p>
+          <ul>
+            <li><strong>Tamper-proof randomness:</strong> Horizontal rungs are placed using a computer's random number generator (RNG), making it impossible for anyone to deliberately engineer a specific outcome. With a paper ladder, the person drawing the rungs could potentially predict or influence the result, but the digital approach eliminates this possibility entirely.</li>
+            <li><strong>Support for large groups:</strong> Drawing a ladder on paper becomes messy and error-prone as the number of participants grows. A digital ladder displays neatly regardless of group size, accommodating any number of participants through scrolling or screen adjustment.</li>
+            <li><strong>Visual animation:</strong> Each participant's path can be traced in real-time with animation, letting everyone see exactly how the result was determined. This process maximizes the excitement and suspense of the draw.</li>
+            <li><strong>Accessible anytime, anywhere:</strong> The ladder game can be run instantly on any internet-connected device — PC, tablet, or smartphone. Simply share a URL and all participants can view the result simultaneously, with no need for paper and pen.</li>
+            <li><strong>Instant re-draws:</strong> If the result needs to change or conditions are updated, a new ladder can be generated with a single button press. There is no need to start from scratch as with a paper ladder.</li>
+          </ul>
+
+          <h2>Comparison with Other Drawing Methods</h2>
+          <p>Several methods are commonly used when a fair draw is needed. Let's compare the characteristics of each approach.</p>
+          <ul>
+            <li><strong>Coin toss:</strong> The simplest drawing method, but limited to just two outcomes (heads or tails), making it impractical for more than two participants. Multiple rounds are required, which is time-consuming and cumbersome.</li>
+            <li><strong>Drawing lots:</strong> A traditional method where folded slips of paper are placed in a container and drawn one by one. It is fair but requires physical materials (paper, pen, container), excludes remote participants, and the order of drawing can create psychological pressure.</li>
+            <li><strong>Random number generator:</strong> Computer-generated random numbers are accurate and fast, but the instant results lack the fun and suspense of a draw. The ladder game's visual path-tracing process gives participants a sense of engagement and excitement.</li>
+            <li><strong>Dice:</strong> Limited to numbers 1 through 6, dice become inconvenient for groups larger than six. The need for physical dice is also a drawback in digital settings.</li>
+          </ul>
+          <p>Overall, the ladder game is a drawing method that combines <strong>mathematical fairness</strong>, <strong>visual entertainment</strong>, and <strong>flexibility in group size</strong>. Try the <a href="/">Ladder Game</a> right now! Discover more ways to use it in the <a href="guide.html">Usage Guide</a>, and learn tips for fair draws in <a href="tips.html">Drawing Tips</a>.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Chinese (Simplified) -->
+    <div data-lang="zh" style="display:none;">
+      <div class="card policy-card">
+        <div class="policy-body">
+
+          <h2>数字梯子游戏的优势</h2>
+          <p>与传统的纸质梯子游戏相比，数字版本具有多项显著优势。</p>
+          <ul>
+            <li><strong>不可篡改的随机性：</strong>横线的放置使用计算机随机数生成器（RNG），任何人都无法故意制造特定结果。在纸质梯子中，画线的人有可能预测或引导结果，但数字方式从根本上杜绝了这种操纵的可能性。</li>
+            <li><strong>支持大规模群组：</strong>在纸上画梯子时，参与者越多空间越不够用，线条也会变得复杂容易出错。数字梯子无论人数多少都能清晰显示，通过滚动或调整屏幕即可容纳任意数量的参与者。</li>
+            <li><strong>可视化动画效果：</strong>可以通过动画实时追踪每位参与者的路径，直观地看到结果是如何产生的。这个过程将抽签的趣味性和紧张感发挥到了极致。</li>
+            <li><strong>随时随地可用：</strong>只要有联网设备，无论是电脑、平板还是手机，都可以立即运行梯子游戏。无需准备纸笔，只要分享链接，所有参与者就能同时查看结果。</li>
+            <li><strong>即时重新抽签：</strong>如果对结果不满意或条件发生变化，只需按一下按钮即可立即生成新的梯子，无需像纸质梯子那样从头开始重画。</li>
+          </ul>
+
+          <h2>与其他抽签方式的比较</h2>
+          <p>在需要公平抽签的场合，除了梯子游戏外还有多种方法可供选择。让我们比较一下各种方法的特点。</p>
+          <ul>
+            <li><strong>抛硬币：</strong>最简单的抽签方式，但只有正反两种结果，不适合两人以上的情况。需要多次重复，耗时且繁琐。</li>
+            <li><strong>抽签（抓阄）：</strong>将折好的纸条放入容器中逐一抽取的传统方式。虽然公平，但需要准备纸、笔和容器等实物，远程参与者无法参加，而且抽签顺序可能带来心理压力。</li>
+            <li><strong>随机数生成器：</strong>用计算机生成随机数的方式既准确又快速，但结果瞬间产生，缺少抽签的乐趣和紧张感。梯子游戏通过可视化的路径追踪过程，为参与者带来趣味与沉浸感。</li>
+            <li><strong>骰子：</strong>仅限于 1 到 6 的数字，超过 6 人时使用不便。在数字化环境中，需要实体骰子也是一个缺点。</li>
+          </ul>
+          <p>综合来看，梯子游戏是一种兼具<strong>数学公平性</strong>、<strong>视觉趣味性</strong>和<strong>参与人数灵活性</strong>的抽签方法。现在就来体验<a href="/">梯子游戏</a>吧！更多使用方法请参阅<a href="guide.html">使用指南</a>，公平抽签的技巧请查看<a href="tips.html">抽签技巧</a>。</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Japanese -->
+    <div data-lang="ja" style="display:none;">
+      <div class="card policy-card">
+        <div class="policy-body">
+
+          <h2>デジタルあみだくじの利点</h2>
+          <p>従来の紙のあみだくじと比べて、デジタル版にはいくつかの明確な利点があります。</p>
+          <ul>
+            <li><strong>改ざん不可能なランダム性：</strong>コンピュータの乱数生成器（RNG）を使って横線を配置するため、誰かが意図的に特定の結果を作り出すことは不可能です。紙のあみだくじでは横線を引く人が結果を予測・誘導できる余地がありますが、デジタル方式ではそのような操作の可能性が根本的に排除されます。</li>
+            <li><strong>大人数に対応：</strong>紙にはしごを描く場合、参加者が増えるとスペースが足りなくなり、線が複雑になってミスが起きやすくなります。デジタルあみだくじは人数に関係なくきれいに表示され、スクロールや画面調整で何人でも対応できます。</li>
+            <li><strong>視覚的なアニメーション効果：</strong>各参加者の経路をアニメーションでリアルタイムに追跡でき、結果がどのように決まったかを視覚的に確認する楽しさがあります。この過程があみだくじの興奮と緊張感を最大限に引き出します。</li>
+            <li><strong>いつでもどこでもアクセス可能：</strong>インターネットに接続された機器があれば、PC・タブレット・スマートフォンのどこからでもすぐにあみだくじを実行できます。紙とペンを用意する必要なく、URLを共有するだけで全員が同時に結果を確認できます。</li>
+            <li><strong>即座にやり直し可能：</strong>結果を変更したい場合や条件が変わった場合、ボタン一つで新しいはしごを即座に生成できます。紙のように最初から描き直す必要はありません。</li>
+          </ul>
+
+          <h2>他のくじ引き方法との比較</h2>
+          <p>公平なくじ引きが必要な場面では、あみだくじ以外にもさまざまな方法が使われます。それぞれの方法の特徴を比較してみましょう。</p>
+          <ul>
+            <li><strong>コイントス：</strong>最もシンプルなくじ引き方法ですが、表と裏の2つの結果しかないため、3人以上の参加者には不向きです。何度も繰り返す必要があり、時間がかかって手間もかかります。</li>
+            <li><strong>くじ引き（抽選）：</strong>折った紙を容器に入れて一つずつ引く伝統的な方法です。公平ですが、紙・ペン・容器などの準備が必要で、リモート参加者は参加できません。また、引く順番による心理的プレッシャーが生じることもあります。</li>
+            <li><strong>乱数生成器：</strong>コンピュータでランダムな数字を生成する方法は正確で速いですが、結果が瞬時に出るため、くじ引きの楽しさや緊張感がありません。あみだくじは経路を追跡する視覚的なプロセスがあり、参加者に興味と没入感を提供します。</li>
+            <li><strong>サイコロ：</strong>1～6の数字に限定され、6人を超えると使いにくくなります。物理的なサイコロが必要な点もデジタル環境ではデメリットです。</li>
+          </ul>
+          <p>総合的に、あみだくじは<strong>数学的な公平性</strong>、<strong>視覚的な楽しさ</strong>、<strong>参加人数の柔軟性</strong>を兼ね備えたくじ引き方法です。今すぐ<a href="/">あみだくじ</a>を体験してみましょう！さらに多くの活用法は<a href="guide.html">活用ガイド</a>で、公平なくじ引きのコツは<a href="tips.html">くじ引きのヒント</a>でご確認ください。</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .page -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🪜 사다리 타기</div>
+      <nav class="footer-nav">
+        <a href="about.html">소개</a>
+        <a href="guide.html">활용 가이드</a>
+        <a href="tips.html">추첨 팁</a>
+        <a href="faq-detail.html">FAQ</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="mailto:contact@productbuilder.page">문의하기</a>
+      </nav>
+      <p class="footer-copy">© 2026 ProductBuilder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script defer src="i18n-static.js"></script>
+</body>
+</html>

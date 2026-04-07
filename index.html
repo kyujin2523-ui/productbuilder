@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="title">사다리 타기 - 무료 온라인 사다리 게임</title>
-  <meta name="description" content="무료 온라인 사다리 타기 게임. 참가자와 결과를 입력하면 랜덤 사다리를 자동 생성합니다. 회식 메뉴, 당번, 팀 나누기 등 어떤 상황에서도 공정한 추첨이 가능합니다." />
-  <meta name="keywords" content="사다리타기, 사다리 게임, 온라인 사다리, 랜덤 추첨, 제비뽑기, 순서 정하기, ladder game" />
+  <title data-i18n="title">Ladder Game - Free Online Random Lottery</title>
+  <meta name="description" content="Free online ladder game (Amidakuji). Enter players and prizes to generate a random ladder automatically. Fair random selection for team picking, chore assignment, lunch choices, and more." />
+  <meta name="keywords" content="ladder game, amidakuji, random picker, random lottery, team picker, fair draw, 사다리타기, あみだくじ" />
   <meta name="author" content="ProductBuilder" />
-  <meta property="og:title" content="사다리 타기 - 무료 온라인 사다리 게임" />
-  <meta property="og:description" content="참가자와 결과를 입력하면 공정한 랜덤 사다리를 자동 생성합니다." />
+  <meta property="og:title" content="Ladder Game - Free Online Random Lottery" />
+  <meta property="og:description" content="Enter players and prizes to generate a fair random ladder automatically." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,8 +39,10 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo">🪜 <span data-i18n="siteName">사다리 타기</span></a>
       <ul class="nav-links">
-        <li><a href="#how-to-use" data-i18n="navHowTo">사용법</a></li>
-        <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
+        <li><a href="about.html" data-i18n="navAbout">소개</a></li>
+        <li><a href="guide.html" data-i18n="navGuide">활용 가이드</a></li>
+        <li><a href="tips.html" data-i18n="navTips">추첨 팁</a></li>
+        <li><a href="faq-detail.html" data-i18n="navFaqDetail">FAQ</a></li>
         <li><a href="privacy.html" data-i18n="navPrivacy">개인정보처리방침</a></li>
       </ul>
     </div>
@@ -142,16 +144,6 @@
         <div id="results-list"></div>
       </div>
 
-      <!-- AD: 결과 아래 / Disqus 위 -->
-      <div class="ad-wrap">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-7362975376492503"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-
       <div class="disqus-section card">
         <h3 class="disqus-title" data-i18n="comments">💬 댓글</h3>
         <div id="disqus_thread"></div>
@@ -166,6 +158,17 @@
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
     </div>
+
+    <!-- ABOUT: 사다리 타기란? -->
+    <section id="about-intro" class="content-section">
+      <h2 class="section-title" data-i18n="aboutIntroTitle">🪜 사다리 타기란?</h2>
+      <div class="article-body card">
+        <p data-i18n="aboutIntroP1">사다리 타기는 한국에서 가장 널리 사용되는 공정한 추첨 방법 중 하나입니다. 일본에서는 '아미다쿠지(あみだくじ)'라고 불리며, 수백 년의 역사를 가지고 있습니다. 세로줄과 가로줄로 이루어진 사다리 구조를 통해 참가자와 결과를 무작위로 연결하는 방식입니다.</p>
+        <p data-i18n="aboutIntroP2">사다리 타기의 핵심 원리는 수학적 '순열(permutation)'에 기반합니다. 각 가로선은 인접한 두 줄의 위치를 바꾸는 '전치(transposition)' 역할을 하며, 이러한 전치들이 무작위로 조합되어 예측할 수 없는 결과를 만들어냅니다. 이 때문에 참가자 수가 동일하다면 어떤 결과든 동일한 확률로 배정됩니다.</p>
+        <p data-i18n="aboutIntroP3">디지털 사다리 타기는 종이에 그리는 것보다 훨씬 편리합니다. 가로선이 컴퓨터 난수 생성기를 통해 자동 배치되므로 사람이 의도적으로 결과를 조작할 수 없고, 참가자가 많아져도 깔끔하게 표시됩니다. 회식 메뉴 정하기, 청소 당번 배정, 팀 나누기, 발표 순서 정하기 등 일상생활의 다양한 장면에서 활용할 수 있습니다.</p>
+        <a href="about.html" class="read-more" data-i18n="readMore">자세히 알아보기 →</a>
+      </div>
+    </section>
 
     <!-- HOW TO USE -->
     <section id="how-to-use" class="content-section">
@@ -205,13 +208,40 @@
     <!-- USE CASES -->
     <section class="content-section">
       <h2 class="section-title" data-i18n="useCaseTitle">💡 이런 상황에 활용하세요</h2>
-      <div class="use-cases">
-        <div class="use-case">🍽️ <span data-i18n="useCase1">회식 메뉴 정하기</span></div>
-        <div class="use-case">🧹 <span data-i18n="useCase2">청소 당번 정하기</span></div>
-        <div class="use-case">👥 <span data-i18n="useCase3">팀 나누기</span></div>
-        <div class="use-case">🎁 <span data-i18n="useCase4">선물 교환 파트너</span></div>
-        <div class="use-case">📋 <span data-i18n="useCase5">발표 순서 정하기</span></div>
-        <div class="use-case">🎮 <span data-i18n="useCase6">게임 캐릭터 배정</span></div>
+      <div class="use-cases-detail">
+        <div class="use-case-card card">
+          <div class="use-case-icon">🍽️</div>
+          <h3 data-i18n="useCase1">회식 메뉴 정하기</h3>
+          <p data-i18n="useCase1Desc">팀원들의 의견이 갈릴 때 사다리 타기로 오늘의 메뉴를 정해보세요. 결과에 후보 메뉴를 입력하면 공정하게 결정됩니다.</p>
+        </div>
+        <div class="use-case-card card">
+          <div class="use-case-icon">🧹</div>
+          <h3 data-i18n="useCase2">청소 당번 정하기</h3>
+          <p data-i18n="useCase2Desc">사무실이나 교실에서 청소 구역을 배정할 때 불만 없이 공평하게 나눌 수 있습니다.</p>
+        </div>
+        <div class="use-case-card card">
+          <div class="use-case-icon">👥</div>
+          <h3 data-i18n="useCase3">팀 나누기</h3>
+          <p data-i18n="useCase3Desc">체육 수업, 워크숍, 게임 등에서 팀을 구성할 때 편향 없이 무작위로 팀원을 배정합니다.</p>
+        </div>
+        <div class="use-case-card card">
+          <div class="use-case-icon">🎁</div>
+          <h3 data-i18n="useCase4">선물 교환 파트너</h3>
+          <p data-i18n="useCase4Desc">시크릿 산타나 선물 교환 이벤트에서 누가 누구에게 선물을 줄지 비밀스럽게 정할 수 있습니다.</p>
+        </div>
+        <div class="use-case-card card">
+          <div class="use-case-icon">📋</div>
+          <h3 data-i18n="useCase5">발표 순서 정하기</h3>
+          <p data-i18n="useCase5Desc">수업이나 회의에서 발표 순서를 정할 때 누구도 불리하지 않은 공정한 순서를 만듭니다.</p>
+        </div>
+        <div class="use-case-card card">
+          <div class="use-case-icon">🎮</div>
+          <h3 data-i18n="useCase6">게임 캐릭터 배정</h3>
+          <p data-i18n="useCase6Desc">보드게임이나 온라인 게임에서 캐릭터, 역할, 진영을 랜덤으로 배정할 때 활용하세요.</p>
+        </div>
+      </div>
+      <div class="use-case-more">
+        <a href="guide.html" class="read-more" data-i18n="guideMore">활용 가이드 전체 보기 →</a>
       </div>
     </section>
 
@@ -235,6 +265,25 @@
           <summary data-i18n="faq4Q">모바일에서도 사용할 수 있나요?</summary>
           <p data-i18n="faq4A">네, 모바일 환경에 최적화되어 있습니다. 스마트폰, 태블릿 모두에서 편리하게 사용할 수 있어요.</p>
         </details>
+        <details class="faq-item">
+          <summary data-i18n="faq5Q">사다리 타기는 수학적으로 공정한가요?</summary>
+          <p data-i18n="faq5A">네, 사다리 타기는 순열(permutation) 원리에 기반한 공정한 추첨 방식입니다. 충분한 수의 가로선이 무작위로 배치되면 모든 참가자가 어떤 결과든 동일한 확률로 받게 됩니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq6Q">입력한 데이터가 서버에 저장되나요?</summary>
+          <p data-i18n="faq6A">아니요. 모든 데이터는 사용자의 브라우저에서만 처리되며 서버로 전송되거나 저장되지 않습니다. 페이지를 새로고침하면 입력 데이터가 초기화됩니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq7Q">같은 사다리를 다시 볼 수 있나요?</summary>
+          <p data-i18n="faq7A">현재는 사다리를 저장하는 기능이 없습니다. 사다리를 새로 생성할 때마다 완전히 새로운 랜덤 사다리가 만들어집니다. 결과를 기록해두고 싶다면 스크린샷을 저장하는 것을 권장합니다.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq8Q">인터넷 연결 없이도 사용할 수 있나요?</summary>
+          <p data-i18n="faq8A">사다리 생성과 결과 확인은 브라우저에서 실행되므로 페이지가 한번 로드되면 오프라인에서도 기본 기능을 사용할 수 있습니다. 다만 광고와 댓글 기능은 인터넷 연결이 필요합니다.</p>
+        </details>
+      </div>
+      <div class="faq-more">
+        <a href="faq-detail.html" class="read-more" data-i18n="faqMore">더 많은 질문 보기 →</a>
       </div>
     </section>
 
@@ -255,6 +304,10 @@
     <div class="footer-inner">
       <div class="footer-logo">🪜 <span data-i18n="siteName">사다리 타기</span></div>
       <nav class="footer-nav">
+        <a href="about.html" data-i18n="navAbout">소개</a>
+        <a href="guide.html" data-i18n="navGuide">활용 가이드</a>
+        <a href="tips.html" data-i18n="navTips">추첨 팁</a>
+        <a href="faq-detail.html" data-i18n="navFaqDetail">FAQ</a>
         <a href="privacy.html" data-i18n="navPrivacy">개인정보처리방침</a>
         <a href="mailto:contact@productbuilder.page" data-i18n="navContact">문의하기</a>
       </nav>

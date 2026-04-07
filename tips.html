@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tips for Fair Random Selection - Ladder Game</title>
+  <meta name="description" content="Tips to make ladder games fairer and a comparison of various random selection methods. A practical guide for fair random drawings." />
+  <meta name="keywords" content="사다리타기 팁, 공정한 추첨, 랜덤 추첨 방법, 제비뽑기, 추첨 비교" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7362975376492503"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ko">한국어</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="ja">日本語</button>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">🪜 사다리 타기</a>
+      <ul class="nav-links">
+        <li><a href="about.html">소개</a></li>
+        <li><a href="guide.html">활용 가이드</a></li>
+        <li><a href="tips.html">추첨 팁</a></li>
+        <li><a href="faq-detail.html">FAQ</a></li>
+        <li><a href="privacy.html">개인정보처리방침</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- ===== KOREAN ===== -->
+    <div data-lang="ko">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">공정한 추첨 팁</h1>
+
+          <h2>1. 공정한 추첨이란?</h2>
+          <p>공정한 추첨이란 모든 참가자에게 동일한 확률이 부여되는 무작위 선택 과정을 의미합니다. 진정으로 공정한 추첨이 되려면 세 가지 핵심 조건이 충족되어야 합니다. 첫째, <strong>동일한 확률</strong>입니다. 어떤 참가자도 다른 참가자보다 유리하거나 불리해서는 안 됩니다. 둘째, <strong>조작 불가능성</strong>입니다. 추첨을 진행하는 사람이나 참가자가 결과에 영향을 미칠 수 없어야 합니다. 셋째, <strong>투명한 과정</strong>입니다. 추첨 방법과 과정이 모든 참가자에게 공개되어 누구나 그 공정성을 확인할 수 있어야 합니다.</p>
+          <p>일상에서 "가위바위보"나 "동전 던지기"를 흔히 사용하지만, 이러한 방법들은 참가자의 습관이나 물리적 조건에 따라 완벽한 공정성을 보장하지 못할 수 있습니다. 반면 사다리 타기는 수학적 순열에 기반하여 컴퓨터가 가로선을 무작위로 배치하므로 인간의 개입 여지가 없습니다.</p>
+
+          <h2>2. 추첨 방법 비교표</h2>
+          <p>다양한 추첨 방법을 한눈에 비교하여 상황에 맞는 최적의 방법을 선택하세요.</p>
+
+          <table style="width:100%; border-collapse:collapse; margin:1.2em 0 1.5em; font-size:0.95em;">
+            <thead>
+              <tr style="background:rgba(139,92,246,0.15);">
+                <th style="padding:10px 8px; text-align:left; border-bottom:2px solid rgba(139,92,246,0.3);">방법</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">최대 인원</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">공정성</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">조작 가능성</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">재미 요소</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">준비물</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪜 사다리 타기</td>
+                <td style="padding:8px; text-align:center;">10+명</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">매우 낮음</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">없음 (온라인)</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎫 제비뽑기</td>
+                <td style="padding:8px; text-align:center;">제한 없음</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">낮음</td>
+                <td style="padding:8px; text-align:center;">★★★☆☆</td>
+                <td style="padding:8px; text-align:center;">종이, 용기</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪙 동전 던지기</td>
+                <td style="padding:8px; text-align:center;">2명</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">중간</td>
+                <td style="padding:8px; text-align:center;">★★☆☆☆</td>
+                <td style="padding:8px; text-align:center;">동전</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎲 주사위</td>
+                <td style="padding:8px; text-align:center;">6명</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">중간</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">주사위</td>
+              </tr>
+              <tr>
+                <td style="padding:8px;">🔢 랜덤 숫자 생성기</td>
+                <td style="padding:8px; text-align:center;">제한 없음</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">매우 낮음</td>
+                <td style="padding:8px; text-align:center;">★☆☆☆☆</td>
+                <td style="padding:8px; text-align:center;">없음 (온라인)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>3. 사다리 타기를 더 공정하게 만드는 팁</h2>
+          <p>사다리 타기는 기본적으로 공정한 추첨 방식이지만, 몇 가지 팁을 활용하면 공정성을 더욱 높일 수 있습니다.</p>
+          <ul>
+            <li><strong>가로선(다리)을 충분히 배치하세요.</strong> 가로선이 많을수록 결과의 무작위성이 높아집니다. 가로선이 너무 적으면 출발 위치와 결과 사이의 연관성이 생길 수 있으므로, 참가자 수의 2~3배 이상의 가로선이 있는 것이 이상적입니다.</li>
+            <li><strong>최소 3명 이상의 참가자가 참여하세요.</strong> 2명일 때는 사다리 타기보다 동전 던지기가 더 효율적입니다. 3명 이상이 되어야 사다리 구조가 의미 있는 무작위 결과를 만들어냅니다.</li>
+            <li><strong>위치를 선택하기 전에 사다리를 확인하지 마세요.</strong> 종이 사다리의 경우 가로선이 보일 수 있어 결과를 예측할 수 있습니다. 디지털 사다리 타기를 사용하면 이 문제가 자동으로 해결됩니다.</li>
+            <li><strong>디지털 버전을 활용하세요.</strong> 컴퓨터 난수 생성기(PRNG)를 통해 가로선이 배치되므로 인간의 무의식적 패턴이 개입할 여지가 없습니다. 진정한 무작위성을 원한다면 온라인 사다리 타기를 추천합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ENGLISH ===== -->
+    <div data-lang="en" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">Tips for Fair Random Selection</h1>
+
+          <h2>1. What Is a Fair Drawing?</h2>
+          <p>A fair drawing is a random selection process in which every participant is given an equal probability. Three key conditions must be met for a truly fair drawing. First, <strong>equal probability</strong> -- no participant should have an advantage or disadvantage over any other. Second, <strong>tamper-proof</strong> -- neither the organizer nor any participant should be able to influence the outcome. Third, <strong>transparent process</strong> -- the method and procedure must be open to all participants so that anyone can verify its fairness.</p>
+          <p>In everyday life we often resort to "rock-paper-scissors" or "coin flips," but these methods may not guarantee perfect fairness due to participants' habits or physical conditions. The ladder game, on the other hand, uses mathematically based permutations with computer-placed horizontal rungs, leaving no room for human intervention.</p>
+
+          <h2>2. Comparison of Drawing Methods</h2>
+          <p>Compare various drawing methods at a glance and choose the best one for your situation.</p>
+
+          <table style="width:100%; border-collapse:collapse; margin:1.2em 0 1.5em; font-size:0.95em;">
+            <thead>
+              <tr style="background:rgba(139,92,246,0.15);">
+                <th style="padding:10px 8px; text-align:left; border-bottom:2px solid rgba(139,92,246,0.3);">Method</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">Max People</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">Fairness</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">Tampering Risk</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">Fun Factor</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">Materials</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪜 Ladder Game</td>
+                <td style="padding:8px; text-align:center;">10+</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">Very Low</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">None (Online)</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎫 Lottery Draw</td>
+                <td style="padding:8px; text-align:center;">Unlimited</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">Low</td>
+                <td style="padding:8px; text-align:center;">★★★☆☆</td>
+                <td style="padding:8px; text-align:center;">Paper, Container</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪙 Coin Flip</td>
+                <td style="padding:8px; text-align:center;">2</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">Medium</td>
+                <td style="padding:8px; text-align:center;">★★☆☆☆</td>
+                <td style="padding:8px; text-align:center;">Coin</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎲 Dice</td>
+                <td style="padding:8px; text-align:center;">6</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">Medium</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">Dice</td>
+              </tr>
+              <tr>
+                <td style="padding:8px;">🔢 Random Number Generator</td>
+                <td style="padding:8px; text-align:center;">Unlimited</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">Very Low</td>
+                <td style="padding:8px; text-align:center;">★☆☆☆☆</td>
+                <td style="padding:8px; text-align:center;">None (Online)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>3. Tips to Make the Ladder Game Fairer</h2>
+          <p>The ladder game is inherently a fair drawing method, but a few tips can make it even more reliable.</p>
+          <ul>
+            <li><strong>Use enough horizontal rungs.</strong> The more rungs, the higher the randomness of the result. Too few rungs can create a correlation between starting position and outcome, so ideally there should be at least 2-3 times the number of participants.</li>
+            <li><strong>Have at least 3 participants.</strong> With only 2 people, a coin flip is more efficient. The ladder structure produces meaningful random outcomes when there are 3 or more participants.</li>
+            <li><strong>Don't look at the ladder before choosing a position.</strong> With paper ladders, the rungs may be visible, allowing results to be predicted. Using a digital ladder game automatically solves this problem.</li>
+            <li><strong>Use the digital version.</strong> Rungs are placed via a computer pseudo-random number generator (PRNG), leaving no room for unconscious human patterns. For true randomness, we recommend the online ladder game.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHINESE ===== -->
+    <div data-lang="zh" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">公平抽签技巧</h1>
+
+          <h2>1. 什么是公平抽签？</h2>
+          <p>公平抽签是指所有参与者获得相同概率的随机选择过程。真正公平的抽签需要满足三个核心条件。第一，<strong>概率相等</strong>——任何参与者都不应比其他人更有优势或更不利。第二，<strong>不可操控</strong>——组织者或参与者都不应能够影响结果。第三，<strong>过程透明</strong>——抽签方法和过程对所有参与者公开，任何人都可以验证其公平性。</p>
+          <p>日常生活中，我们经常使用"石头剪刀布"或"抛硬币"，但这些方法可能因参与者的习惯或物理条件而无法保证完美的公平性。而梯子游戏基于数学排列，由计算机随机放置横档，不留任何人为干预的余地。</p>
+
+          <h2>2. 抽签方法比较表</h2>
+          <p>一目了然地比较各种抽签方法，选择最适合您情况的方法。</p>
+
+          <table style="width:100%; border-collapse:collapse; margin:1.2em 0 1.5em; font-size:0.95em;">
+            <thead>
+              <tr style="background:rgba(139,92,246,0.15);">
+                <th style="padding:10px 8px; text-align:left; border-bottom:2px solid rgba(139,92,246,0.3);">方法</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">最多人数</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">公平性</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">操控可能性</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">趣味性</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">所需物品</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪜 梯子游戏</td>
+                <td style="padding:8px; text-align:center;">10+人</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">非常低</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">无（在线）</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎫 抽签</td>
+                <td style="padding:8px; text-align:center;">无限制</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">低</td>
+                <td style="padding:8px; text-align:center;">★★★☆☆</td>
+                <td style="padding:8px; text-align:center;">纸、容器</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪙 抛硬币</td>
+                <td style="padding:8px; text-align:center;">2人</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">中等</td>
+                <td style="padding:8px; text-align:center;">★★☆☆☆</td>
+                <td style="padding:8px; text-align:center;">硬币</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎲 骰子</td>
+                <td style="padding:8px; text-align:center;">6人</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">中等</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">骰子</td>
+              </tr>
+              <tr>
+                <td style="padding:8px;">🔢 随机数生成器</td>
+                <td style="padding:8px; text-align:center;">无限制</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">非常低</td>
+                <td style="padding:8px; text-align:center;">★☆☆☆☆</td>
+                <td style="padding:8px; text-align:center;">无（在线）</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>3. 让梯子游戏更公平的技巧</h2>
+          <p>梯子游戏本身就是一种公平的抽签方式，但利用以下几个技巧可以进一步提高公平性。</p>
+          <ul>
+            <li><strong>放置足够多的横档。</strong>横档越多，结果的随机性越高。横档太少会导致起始位置与结果之间产生关联，因此理想情况下横档数量应为参与者人数的2至3倍以上。</li>
+            <li><strong>至少3名参与者参加。</strong>只有2人时，抛硬币比梯子游戏更高效。3人以上时，梯子结构才能产生有意义的随机结果。</li>
+            <li><strong>选择位置前不要查看梯子。</strong>纸质梯子的横档可能可见，从而可以预测结果。使用数字梯子游戏可以自动解决这个问题。</li>
+            <li><strong>使用数字版本。</strong>横档通过计算机伪随机数生成器（PRNG）放置，不留任何无意识人为模式的余地。如果您想要真正的随机性，我们推荐在线梯子游戏。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JAPANESE ===== -->
+    <div data-lang="ja" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">公平な抽選のためのヒント</h1>
+
+          <h2>1. 公平な抽選とは？</h2>
+          <p>公平な抽選とは、すべての参加者に同じ確率が与えられるランダムな選択プロセスのことです。真に公平な抽選であるためには、3つの重要な条件を満たす必要があります。第一に、<strong>確率の平等</strong>——どの参加者も他の参加者より有利または不利であってはなりません。第二に、<strong>不正操作の不可能性</strong>——主催者も参加者も結果に影響を与えることができてはなりません。第三に、<strong>透明なプロセス</strong>——抽選方法とプロセスがすべての参加者に公開され、誰もがその公平性を確認できなければなりません。</p>
+          <p>日常生活では「じゃんけん」や「コイン投げ」をよく使いますが、これらの方法は参加者の癖や物理的条件により完全な公平性を保証できない場合があります。一方、あみだくじは数学的順列に基づき、コンピューターが横線をランダムに配置するため、人間の介入の余地がありません。</p>
+
+          <h2>2. 抽選方法比較表</h2>
+          <p>さまざまな抽選方法を一目で比較し、状況に合った最適な方法を選びましょう。</p>
+
+          <table style="width:100%; border-collapse:collapse; margin:1.2em 0 1.5em; font-size:0.95em;">
+            <thead>
+              <tr style="background:rgba(139,92,246,0.15);">
+                <th style="padding:10px 8px; text-align:left; border-bottom:2px solid rgba(139,92,246,0.3);">方法</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">最大人数</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">公平性</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">不正の可能性</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">楽しさ</th>
+                <th style="padding:10px 8px; text-align:center; border-bottom:2px solid rgba(139,92,246,0.3);">準備物</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪜 あみだくじ</td>
+                <td style="padding:8px; text-align:center;">10+人</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">非常に低い</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">不要（オンライン）</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎫 くじ引き</td>
+                <td style="padding:8px; text-align:center;">制限なし</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">低い</td>
+                <td style="padding:8px; text-align:center;">★★★☆☆</td>
+                <td style="padding:8px; text-align:center;">紙、容器</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🪙 コイン投げ</td>
+                <td style="padding:8px; text-align:center;">2人</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">中程度</td>
+                <td style="padding:8px; text-align:center;">★★☆☆☆</td>
+                <td style="padding:8px; text-align:center;">コイン</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <td style="padding:8px;">🎲 サイコロ</td>
+                <td style="padding:8px; text-align:center;">6人</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">中程度</td>
+                <td style="padding:8px; text-align:center;">★★★★☆</td>
+                <td style="padding:8px; text-align:center;">サイコロ</td>
+              </tr>
+              <tr>
+                <td style="padding:8px;">🔢 乱数生成器</td>
+                <td style="padding:8px; text-align:center;">制限なし</td>
+                <td style="padding:8px; text-align:center;">★★★★★</td>
+                <td style="padding:8px; text-align:center;">非常に低い</td>
+                <td style="padding:8px; text-align:center;">★☆☆☆☆</td>
+                <td style="padding:8px; text-align:center;">不要（オンライン）</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>3. あみだくじをより公平にするヒント</h2>
+          <p>あみだくじは基本的に公平な抽選方法ですが、いくつかのヒントを活用すればさらに公平性を高めることができます。</p>
+          <ul>
+            <li><strong>横線（橋）を十分に配置してください。</strong>横線が多いほど結果のランダム性が高まります。横線が少なすぎると出発位置と結果の間に関連性が生じる可能性があるため、参加者数の2〜3倍以上の横線があるのが理想的です。</li>
+            <li><strong>最低3人以上の参加者で行ってください。</strong>2人の場合はあみだくじよりコイン投げの方が効率的です。3人以上になって初めてあみだくじの構造が意味のあるランダムな結果を生み出します。</li>
+            <li><strong>位置を選ぶ前にあみだくじを見ないでください。</strong>紙のあみだくじの場合、横線が見えて結果を予測できる可能性があります。デジタルあみだくじを使用すれば、この問題は自動的に解決されます。</li>
+            <li><strong>デジタル版を活用してください。</strong>コンピューターの擬似乱数生成器（PRNG）により横線が配置されるため、人間の無意識的なパターンが介入する余地がありません。真のランダム性を求めるなら、オンラインあみだくじをお勧めします。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD -->
+    <div class="ad-wrap">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7362975376492503"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- ===== KOREAN (continued) ===== -->
+    <div data-lang="ko">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>4. 참가자 수에 따른 최적 구성</h2>
+          <p>참가자 수에 따라 사다리 타기의 사용 경험이 달라집니다. 아래를 참고하여 상황에 맞게 활용하세요.</p>
+          <ul>
+            <li><strong>2~3명:</strong> 단순하고 빠른 결과를 얻을 수 있습니다. 간단한 이분법적 결정(예: 누가 커피를 살 것인가)에 적합합니다. 다만 2명일 때는 동전 던지기가 더 간편할 수 있습니다.</li>
+            <li><strong>4~6명:</strong> 사다리 타기의 이상적인 인원입니다. 충분한 가로선이 생성되어 무작위성이 극대화되고, 화면에도 깔끔하게 표시됩니다. 팀 회식, 청소 당번 등 대부분의 일상 상황에 적합합니다.</li>
+            <li><strong>7~10명:</strong> 데스크탑 환경에서 잘 작동합니다. 사다리의 가로선이 복잡해져 더욱 예측 불가능한 결과를 얻을 수 있습니다. 학급 모둠이나 동아리 활동에 적합합니다.</li>
+            <li><strong>10명 이상:</strong> 모바일에서는 가로 스크롤이 필요할 수 있습니다. 가능하면 데스크탑이나 태블릿에서 사용하는 것이 좋으며, 참가자가 매우 많을 경우 여러 차례로 나누어 진행하는 것을 권장합니다.</li>
+          </ul>
+
+          <h2>5. 언제 사다리 타기가 적합한가?</h2>
+          <p>사다리 타기는 만능 도구가 아닙니다. 상황에 따라 적합한 경우와 그렇지 않은 경우가 있습니다.</p>
+          <p><strong>사다리 타기가 적합한 경우:</strong></p>
+          <ul>
+            <li>모든 참가자에게 동일한 확률이 필요할 때 (역할 배정, 순서 정하기 등)</li>
+            <li>추첨 과정에 재미 요소를 더하고 싶을 때 (애니메이션 경로 추적)</li>
+            <li>결과의 시각적 증거가 필요할 때 (경로를 따라 결과를 확인할 수 있어 투명성이 보장됨)</li>
+            <li>별도의 준비물 없이 즉석에서 추첨하고 싶을 때</li>
+          </ul>
+          <p><strong>사다리 타기가 적합하지 않은 경우:</strong></p>
+          <ul>
+            <li>가중 확률이 필요한 경우 (예: 기여도에 따라 차등 확률을 부여해야 할 때)</li>
+            <li>매우 많은 인원(100명 이상)의 추첨이 필요한 경우 (이 경우 랜덤 숫자 생성기가 적합)</li>
+            <li>법적 효력이 필요한 공식적인 추첨 (공증이 필요한 경우 공인된 추첨 시스템 사용)</li>
+            <li>반복적이고 대량의 자동화된 추첨이 필요한 경우</li>
+          </ul>
+
+          <h2>6. 다른 추첨 방법의 장단점</h2>
+          <p>상황에 따라 사다리 타기 외에도 다양한 추첨 방법을 활용할 수 있습니다. 각 방법의 장단점을 이해하면 최적의 도구를 선택하는 데 도움이 됩니다.</p>
+          <ul>
+            <li><strong>제비뽑기:</strong> 종이만 있으면 어디서든 가능하고 인원 제한이 없다는 장점이 있습니다. 그러나 종이를 준비하는 수고가 필요하고, 접는 방식이나 크기 차이로 미세한 불공정성이 발생할 수 있습니다.</li>
+            <li><strong>동전 던지기:</strong> 2명이 결정해야 할 때 가장 빠르고 간편합니다. 하지만 3명 이상에서는 사용이 어렵고, 숙련된 사람이 의도적으로 결과를 조작할 가능성이 존재합니다.</li>
+            <li><strong>주사위:</strong> 촉각적인 재미가 있고 보드게임과 함께 활용하기 좋습니다. 다만 6명까지만 사용 가능하며, 주사위의 무게 중심이 치우쳐 있을 경우 공정성이 떨어질 수 있습니다.</li>
+            <li><strong>랜덤 숫자 생성기:</strong> 수학적으로 가장 정확한 무작위 결과를 제공하며 인원 제한이 없습니다. 하지만 시각적 재미가 없고 과정이 단조로워 참가자들이 결과에 흥미를 느끼기 어렵습니다.</li>
+          </ul>
+          <p>결론적으로, 재미와 공정성을 동시에 원한다면 사다리 타기가 최적의 선택입니다. <a href="/">지금 바로 사다리 타기를 시작해 보세요!</a></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ENGLISH (continued) ===== -->
+    <div data-lang="en" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>4. Optimal Setup by Number of Participants</h2>
+          <p>The ladder game experience varies depending on the number of participants. Refer to the guide below for each situation.</p>
+          <ul>
+            <li><strong>2-3 people:</strong> You can get simple, quick results. Ideal for simple binary decisions (e.g., who buys coffee). However, with 2 people a coin flip may be more convenient.</li>
+            <li><strong>4-6 people:</strong> The ideal number for the ladder game. Enough rungs are generated to maximize randomness, and it displays neatly on screen. Suitable for most everyday situations like team dinners or cleaning duties.</li>
+            <li><strong>7-10 people:</strong> Works well on desktop. The ladder's rungs become more complex, yielding even more unpredictable results. Suitable for class groups or club activities.</li>
+            <li><strong>10+ people:</strong> Horizontal scrolling may be needed on mobile. It's best to use a desktop or tablet, and if there are very many participants, consider running multiple rounds.</li>
+          </ul>
+
+          <h2>5. When Is the Ladder Game Appropriate?</h2>
+          <p>The ladder game is not a one-size-fits-all tool. There are situations where it's suitable and others where it's not.</p>
+          <p><strong>The ladder game is suitable when:</strong></p>
+          <ul>
+            <li>Equal probability is needed for all participants (role assignment, determining order, etc.)</li>
+            <li>You want to add a fun element to the drawing process (animated path tracing)</li>
+            <li>Visual evidence of the result is needed (transparency is guaranteed as you can follow the path to the result)</li>
+            <li>You want to draw on the spot without any preparation</li>
+          </ul>
+          <p><strong>The ladder game is NOT suitable when:</strong></p>
+          <ul>
+            <li>Weighted probabilities are needed (e.g., differential probability based on contribution)</li>
+            <li>A drawing with a very large number of people (100+) is needed (a random number generator is more appropriate)</li>
+            <li>An official drawing with legal validity is needed (use a certified drawing system when notarization is required)</li>
+            <li>Repetitive, large-scale automated drawings are needed</li>
+          </ul>
+
+          <h2>6. Pros and Cons of Other Drawing Methods</h2>
+          <p>Depending on the situation, various drawing methods other than the ladder game can be used. Understanding the pros and cons of each method helps you choose the optimal tool.</p>
+          <ul>
+            <li><strong>Lottery draw:</strong> Can be done anywhere with just paper and there's no limit on the number of people. However, it requires the effort of preparing paper, and slight unfairness can arise from differences in folding or size.</li>
+            <li><strong>Coin flip:</strong> The fastest and simplest when 2 people need to decide. However, it's difficult to use with 3 or more people, and a skilled person can intentionally manipulate the result.</li>
+            <li><strong>Dice:</strong> Offers tactile fun and works well alongside board games. However, it's limited to 6 people, and if the dice's center of gravity is off-balance, fairness can be compromised.</li>
+            <li><strong>Random number generator:</strong> Provides the most mathematically accurate random results with no limit on participants. However, it lacks visual fun and the process is monotonous, making it hard for participants to stay engaged.</li>
+          </ul>
+          <p>In conclusion, if you want both fun and fairness, the ladder game is the optimal choice. <a href="/">Try the ladder game now!</a></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHINESE (continued) ===== -->
+    <div data-lang="zh" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>4. 按参与人数的最佳配置</h2>
+          <p>根据参与人数的不同，梯子游戏的使用体验也会有所不同。请参考以下指南根据情况灵活运用。</p>
+          <ul>
+            <li><strong>2-3人：</strong>可以获得简单快速的结果。适合简单的二选一决定（例如：谁去买咖啡）。不过2人时抛硬币可能更方便。</li>
+            <li><strong>4-6人：</strong>梯子游戏的理想人数。生成足够多的横档使随机性最大化，屏幕显示也整洁美观。适合团队聚餐、值日安排等大多数日常场景。</li>
+            <li><strong>7-10人：</strong>在桌面端运行良好。梯子的横档变得更复杂，可以获得更加不可预测的结果。适合班级分组或社团活动。</li>
+            <li><strong>10人以上：</strong>在移动端可能需要水平滚动。建议尽量使用桌面端或平板电脑，参与者非常多时建议分多轮进行。</li>
+          </ul>
+
+          <h2>5. 什么时候适合使用梯子游戏？</h2>
+          <p>梯子游戏并非万能工具。根据情况，有适合和不适合的场景。</p>
+          <p><strong>适合使用梯子游戏的情况：</strong></p>
+          <ul>
+            <li>需要所有参与者获得相同概率时（角色分配、确定顺序等）</li>
+            <li>想在抽签过程中增加趣味元素时（动画路径追踪）</li>
+            <li>需要结果的视觉证据时（可以沿路径确认结果，保证透明性）</li>
+            <li>想要无需准备即可现场抽签时</li>
+          </ul>
+          <p><strong>不适合使用梯子游戏的情况：</strong></p>
+          <ul>
+            <li>需要加权概率时（例如：根据贡献度给予不同概率）</li>
+            <li>需要大量人员（100人以上）抽签时（此时随机数生成器更合适）</li>
+            <li>需要具有法律效力的正式抽签时（需要公证时使用认证抽签系统）</li>
+            <li>需要重复性的大规模自动化抽签时</li>
+          </ul>
+
+          <h2>6. 其他抽签方法的优缺点</h2>
+          <p>根据情况，除梯子游戏外还可以利用各种抽签方法。了解每种方法的优缺点有助于选择最佳工具。</p>
+          <ul>
+            <li><strong>抽签：</strong>只要有纸就可以在任何地方进行，没有人数限制。但需要准备纸张的麻烦，折叠方式或大小差异可能导致细微的不公平。</li>
+            <li><strong>抛硬币：</strong>2人需要做决定时最快最简单。但3人以上时难以使用，熟练者可能故意操纵结果。</li>
+            <li><strong>骰子：</strong>有触觉上的乐趣，适合与桌游搭配使用。但只能供6人使用，如果骰子重心偏移，公平性可能降低。</li>
+            <li><strong>随机数生成器：</strong>提供数学上最准确的随机结果，没有人数限制。但缺乏视觉趣味，过程单调，参与者难以对结果产生兴趣。</li>
+          </ul>
+          <p>总之，如果您同时追求趣味和公平，梯子游戏是最佳选择。<a href="/">立即开始梯子游戏吧！</a></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JAPANESE (continued) ===== -->
+    <div data-lang="ja" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>4. 参加人数別の最適な構成</h2>
+          <p>参加人数によってあみだくじの使用体験が変わります。以下を参考に状況に合わせて活用してください。</p>
+          <ul>
+            <li><strong>2〜3人：</strong>シンプルで素早い結果が得られます。簡単な二者択一の決定（例：誰がコーヒーをおごるか）に適しています。ただし2人の場合はコイン投げの方が手軽かもしれません。</li>
+            <li><strong>4〜6人：</strong>あみだくじの理想的な人数です。十分な横線が生成されてランダム性が最大化され、画面にもきれいに表示されます。チームの食事会や掃除当番など、ほとんどの日常的な場面に適しています。</li>
+            <li><strong>7〜10人：</strong>デスクトップ環境でうまく機能します。あみだくじの横線が複雑になり、さらに予測不可能な結果が得られます。クラスのグループ分けやクラブ活動に適しています。</li>
+            <li><strong>10人以上：</strong>モバイルでは横スクロールが必要になる場合があります。できればデスクトップやタブレットでの使用が望ましく、参加者が非常に多い場合は複数回に分けて実施することをお勧めします。</li>
+          </ul>
+
+          <h2>5. あみだくじが適している場面は？</h2>
+          <p>あみだくじは万能ツールではありません。状況に応じて適している場合とそうでない場合があります。</p>
+          <p><strong>あみだくじが適している場合：</strong></p>
+          <ul>
+            <li>すべての参加者に同じ確率が必要な時（役割分担、順番決めなど）</li>
+            <li>抽選プロセスに楽しさを加えたい時（アニメーションによる経路追跡）</li>
+            <li>結果の視覚的な証拠が必要な時（経路をたどって結果を確認でき、透明性が保証される）</li>
+            <li>準備物なしでその場で抽選したい時</li>
+          </ul>
+          <p><strong>あみだくじが適していない場合：</strong></p>
+          <ul>
+            <li>重み付き確率が必要な場合（例：貢献度に応じて差等確率を付与する必要がある時）</li>
+            <li>非常に多くの人数（100人以上）の抽選が必要な場合（この場合は乱数生成器が適切）</li>
+            <li>法的効力が必要な公式的な抽選（公証が必要な場合は認定された抽選システムを使用）</li>
+            <li>反復的で大量の自動化された抽選が必要な場合</li>
+          </ul>
+
+          <h2>6. 他の抽選方法の長所と短所</h2>
+          <p>状況に応じて、あみだくじ以外にもさまざまな抽選方法を活用できます。各方法の長所と短所を理解すれば、最適なツールの選択に役立ちます。</p>
+          <ul>
+            <li><strong>くじ引き：</strong>紙さえあればどこでもでき、人数制限がないという利点があります。しかし紙を準備する手間がかかり、折り方やサイズの違いで微妙な不公平が生じる可能性があります。</li>
+            <li><strong>コイン投げ：</strong>2人で決める時に最も早くて簡単です。しかし3人以上では使いにくく、熟練した人が意図的に結果を操作する可能性があります。</li>
+            <li><strong>サイコロ：</strong>触覚的な楽しさがあり、ボードゲームと一緒に活用しやすいです。ただし6人までしか使用できず、サイコロの重心が偏っている場合は公平性が損なわれる可能性があります。</li>
+            <li><strong>乱数生成器：</strong>数学的に最も正確なランダム結果を提供し、人数制限がありません。しかし視覚的な楽しさがなく、プロセスが単調で参加者が結果に興味を持ちにくいです。</li>
+          </ul>
+          <p>結論として、楽しさと公平性の両方を求めるなら、あみだくじが最適な選択です。<a href="/">今すぐあみだくじを始めましょう！</a></p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🪜 사다리 타기</div>
+      <nav class="footer-nav">
+        <a href="about.html">소개</a>
+        <a href="guide.html">활용 가이드</a>
+        <a href="tips.html">추첨 팁</a>
+        <a href="faq-detail.html">FAQ</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="mailto:contact@productbuilder.page">문의하기</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 ProductBuilder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script defer src="i18n-static.js"></script>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frequently Asked Questions (FAQ) - Ladder Game</title>
+  <meta name="description" content="Find answers to frequently asked questions about the Ladder Game, including usage, fairness, technical details, and practical tips." />
+  <meta name="keywords" content="ladder game FAQ, ladder game questions, ladder game usage, ladder fairness" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7362975376492503"
+     crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I use the Ladder Game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, enter participant names and result items, then click the 'Generate Ladder' button. Once the ladder is generated, click a participant's name to trace their path, or use 'Show All Results' to reveal every outcome at once. The entire process takes less than 30 seconds from input to result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many participants can join?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no strict limit on the number of participants. However, for the best readability and user experience, 2 to 10 participants is ideal. With more than 10, horizontal scrolling may be needed on mobile devices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I enter result items?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can freely enter anything you like in the result fields—prizes, duties, team names, penalties, etc. It is best to match the number of results to the number of participants; any missing slots will be auto-filled with '?'."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I regenerate the ladder?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, clicking the 'Reset' button returns you to the input screen where you can generate a brand-new ladder. Each generation produces a completely new random ladder, so results will differ every time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I save or share the results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Currently there is no built-in save or share feature. If you want to keep a record of the results, we recommend taking a screenshot. Refreshing the browser will reset all data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the results truly random?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the horizontal rungs of the ladder are generated fresh each time using JavaScript's Math.random() function. Even with the same participants and results, every generation produces an entirely different arrangement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Ladder Game mathematically fair?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Ladder Game is based on mathematical permutation theory. Each horizontal rung acts as a transposition that swaps two adjacent paths, and with enough randomly placed rungs every participant has an equal probability of reaching every result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can someone manipulate the results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The rungs are placed automatically by a computer random-number generator, making intentional manipulation virtually impossible. Unlike paper ladders, the digital version prevents anyone from knowing or controlling rung positions in advance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do the same inputs produce the same results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, even with identical participants and results, a new random arrangement of rungs is generated each time, producing different outcomes. This is because an independent random number is generated on every execution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which browsers are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The game works properly on all modern browsers including Chrome, Firefox, Safari, and Edge. It uses HTML5 Canvas, so we recommend keeping your browser up to date. Internet Explorer is not supported."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use it on mobile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the responsive design ensures comfortable use on smartphones and tablets. Tap a participant's name to reveal their path, and scroll horizontally if there are many participants."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Once the page is loaded, the core ladder generation and result-checking features work offline. However, ads, comments, and web font loading require an internet connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is personal information collected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Participant names and result items are never sent to or stored on any server—all processing happens in your browser. Note that Google AdSense and Disqus may use cookies. See our Privacy Policy page for details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the Ladder Game useful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is perfect for choosing a restaurant for a team dinner, assigning chores, dividing teams, deciding presentation order, matching gift-exchange partners, assigning game characters, and any other situation that calls for a fair random selection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it suitable for large groups?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Technically it can handle large groups, but readability decreases with more than 10 participants. For 20 or more people, we recommend splitting into groups of 5–10 and running separate ladders."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What other random-selection methods exist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Besides the ladder game, there are drawing lots, roulette wheels, coin flips, dice rolls, and more. Each method has its own strengths; check our Tips page for a detailed comparison."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <!-- Language switcher -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ko">한국어</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="ja">日本語</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">🪜 사다리 타기</a>
+      <ul class="nav-links">
+        <li><a href="about.html">소개</a></li>
+        <li><a href="guide.html">활용 가이드</a></li>
+        <li><a href="tips.html">추첨 팁</a></li>
+        <li><a href="faq-detail.html">FAQ</a></li>
+        <li><a href="privacy.html">개인정보처리방침</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- ===== KOREAN ===== -->
+    <div data-lang="ko">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">자주 묻는 질문</h1>
+          <p class="policy-date">사다리 타기에 대해 궁금한 점을 모두 정리했습니다.</p>
+
+          <h2>기본 사용법</h2>
+
+          <details class="faq-item">
+            <summary>사다리 타기는 어떻게 사용하나요?</summary>
+            <p>먼저 참가자 이름을 입력하고, 결과 항목을 입력한 뒤 '사다리 생성하기' 버튼을 클릭하세요. 사다리가 자동으로 생성되면 참가자 이름을 클릭하여 개별 경로를 확인하거나, '전체 결과 보기' 버튼으로 모든 결과를 한 번에 확인할 수 있습니다. 입력부터 결과 확인까지 30초도 걸리지 않는 간편한 과정입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>참가자는 몇 명까지 가능한가요?</summary>
+            <p>참가자 수에 엄격한 제한은 없습니다. 다만 화면 가독성과 사용 편의성을 고려하면 2명에서 10명 사이가 가장 이상적입니다. 10명 이상일 경우 모바일에서는 가로 스크롤이 필요할 수 있으므로, 많은 인원은 그룹을 나누어 진행하는 것을 권장합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>결과 항목은 어떻게 입력하나요?</summary>
+            <p>결과 칸에 상품, 당번, 팀 이름, 벌칙 등 원하는 내용을 자유롭게 입력하면 됩니다. 참가자 수와 동일하게 맞추는 것이 좋으며, 결과가 부족할 경우 자동으로 '?'로 채워집니다. 회식 메뉴, 청소 구역, 역할 분담 등 어떤 내용이든 입력 가능합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>사다리를 다시 만들 수 있나요?</summary>
+            <p>네, '다시 설정' 버튼을 클릭하면 입력 화면으로 돌아가 새로운 사다리를 생성할 수 있습니다. 매번 완전히 새로운 랜덤 사다리가 만들어지므로 결과도 달라집니다. 원하는 만큼 반복해서 사다리를 생성할 수 있으니 부담 없이 사용하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>결과를 저장하거나 공유할 수 있나요?</summary>
+            <p>현재 별도의 저장이나 공유 기능은 제공되지 않습니다. 결과를 보존하고 싶다면 스크린샷을 캡처하여 저장하는 방법을 권장합니다. 브라우저를 새로고침하면 입력 데이터와 사다리가 모두 초기화되므로, 중요한 결과는 반드시 기록해 두세요.</p>
+          </details>
+
+          <h2>공정성과 원리</h2>
+
+          <details class="faq-item">
+            <summary>결과는 정말 무작위인가요?</summary>
+            <p>네, 사다리의 가로선은 JavaScript의 Math.random() 함수를 기반으로 매번 새롭게 생성됩니다. 동일한 참가자와 결과를 입력하더라도 사다리를 생성할 때마다 완전히 다른 배치가 만들어집니다. 컴퓨터의 난수 생성기가 사람의 의도나 편향 없이 가로선 위치를 결정하므로 공정한 결과를 보장합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>사다리 타기는 수학적으로 공정한가요?</summary>
+            <p>사다리 타기는 수학적 순열(permutation) 이론에 기반한 공정한 추첨 방식입니다. 각 가로선은 인접한 두 경로의 위치를 교환하는 전치(transposition) 역할을 하며, 충분한 수의 가로선이 무작위로 배치되면 모든 참가자가 모든 결과에 동일한 확률로 배정됩니다. 이는 수학적으로 증명된 원리이므로 안심하고 사용하실 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>누군가 결과를 조작할 수 있나요?</summary>
+            <p>사다리의 가로선은 컴퓨터 난수 생성기에 의해 자동으로 배치되므로, 사람이 의도적으로 특정 결과를 만들어내는 것은 사실상 불가능합니다. 종이 사다리와 달리 디지털 방식은 가로선 위치를 미리 알거나 조절할 수 없어 조작의 여지가 없습니다. 모든 참가자가 지켜보는 상황에서 실행하면 더욱 신뢰할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>같은 입력으로 같은 결과가 나오나요?</summary>
+            <p>아니요, 같은 참가자와 결과를 입력하더라도 사다리를 생성할 때마다 가로선이 새롭게 랜덤 배치되므로 매번 다른 결과가 나옵니다. 이는 매 실행마다 독립적인 난수가 생성되기 때문이며, 이전 결과가 다음 결과에 영향을 주지 않습니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ENGLISH ===== -->
+    <div data-lang="en" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">Frequently Asked Questions</h1>
+          <p class="policy-date">Everything you need to know about the Ladder Game, answered here.</p>
+
+          <h2>Basic Usage</h2>
+
+          <details class="faq-item">
+            <summary>How do I use the Ladder Game?</summary>
+            <p>Enter the participant names and result items, then click the "Generate Ladder" button. Once the ladder is created, click a participant's name to trace their individual path or press "Show All Results" to reveal every outcome at once. The whole process takes less than 30 seconds from start to finish.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How many participants can join?</summary>
+            <p>There is no strict upper limit on the number of participants. For the best readability and user experience, 2 to 10 participants is ideal. With more than 10, horizontal scrolling may be needed on mobile, so splitting into groups is recommended.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I enter result items?</summary>
+            <p>You can type anything you like into the result fields -- prizes, duties, team names, penalties, and so on. It is best to match the number of results to participants; any missing slots are automatically filled with "?". You can enter restaurant choices, cleaning zones, role assignments, or anything else.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I regenerate the ladder?</summary>
+            <p>Yes, clicking the "Reset" button takes you back to the input screen where a brand-new random ladder can be generated. Every generation produces a completely different arrangement, so results will change each time. Feel free to regenerate as many times as you like.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I save or share the results?</summary>
+            <p>There is currently no built-in save or share feature. If you want to keep a record of the results, we recommend taking a screenshot. Refreshing the browser will reset all entered data and the ladder, so be sure to capture important outcomes.</p>
+          </details>
+
+          <h2>Fairness &amp; Principles</h2>
+
+          <details class="faq-item">
+            <summary>Are the results truly random?</summary>
+            <p>Yes, the horizontal rungs are generated fresh each time using JavaScript's Math.random() function. Even with the same participants and results, every generation produces an entirely different layout. The computer's random-number generator determines rung positions without human intent or bias, ensuring fair outcomes.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is the Ladder Game mathematically fair?</summary>
+            <p>The Ladder Game is grounded in mathematical permutation theory. Each rung acts as a transposition that swaps two adjacent paths, and with enough randomly placed rungs every participant has an equal probability of reaching every result. This is a mathematically proven principle, so you can use it with confidence.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can someone manipulate the results?</summary>
+            <p>The rungs are placed automatically by a computer random-number generator, making intentional manipulation virtually impossible. Unlike paper ladders, the digital version prevents anyone from knowing or controlling rung positions in advance. Running it while all participants watch adds an extra layer of trust.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do the same inputs produce the same results?</summary>
+            <p>No, even with identical participants and results, a new random arrangement of rungs is generated each time, yielding different outcomes. This is because an independent random number is produced on every execution, and previous results have no influence on the next.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHINESE ===== -->
+    <div data-lang="zh" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">常见问题</h1>
+          <p class="policy-date">关于抽签梯子游戏的所有常见问题，都在这里为您解答。</p>
+
+          <h2>基本使用方法</h2>
+
+          <details class="faq-item">
+            <summary>如何使用抽签梯子？</summary>
+            <p>首先输入参与者姓名和结果项目，然后点击"生成梯子"按钮。梯子自动生成后，点击参与者姓名可查看个人路径，也可以点击"查看全部结果"一次性显示所有结果。从输入到查看结果只需不到30秒。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>最多可以有多少参与者？</summary>
+            <p>参与者人数没有严格限制。但考虑到画面可读性和使用便利性，2至10人最为理想。超过10人时，在移动设备上可能需要横向滚动，建议分组进行。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>如何输入结果项目？</summary>
+            <p>您可以在结果栏中自由输入奖品、值日、队名、惩罚等任何内容。建议结果数量与参与者人数一致，不足时系统会自动用"?"填充。聚餐菜单、打扫区域、角色分配等都可以输入。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>可以重新生成梯子吗？</summary>
+            <p>可以，点击"重新设置"按钮即可返回输入界面，生成新的梯子。每次都会生成全新的随机梯子，结果也会不同。您可以随意重复生成，不必有任何顾虑。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>可以保存或分享结果吗？</summary>
+            <p>目前没有提供保存或分享功能。如果您想保留结果，建议截图保存。刷新浏览器后所有数据和梯子都会被重置，请务必记录重要结果。</p>
+          </details>
+
+          <h2>公平性与原理</h2>
+
+          <details class="faq-item">
+            <summary>结果真的是随机的吗？</summary>
+            <p>是的，梯子的横线每次都是基于JavaScript的Math.random()函数重新生成的。即使输入相同的参与者和结果，每次生成都会产生完全不同的排列。计算机的随机数生成器在没有人为意图或偏见的情况下决定横线位置，确保公平的结果。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>抽签梯子在数学上公平吗？</summary>
+            <p>抽签梯子基于数学排列（permutation）理论，是一种公平的抽签方式。每条横线起到交换相邻两条路径位置的置换作用，当足够多的横线被随机放置时，每位参与者以相同的概率被分配到每个结果。这是数学上已被证明的原理。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>有人能操纵结果吗？</summary>
+            <p>梯子的横线由计算机随机数生成器自动放置，因此人为故意制造特定结果实际上是不可能的。与纸质梯子不同，数字方式无法提前知道或控制横线的位置，没有操纵的余地。在所有参与者注视下运行会更加值得信赖。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>相同输入会产生相同结果吗？</summary>
+            <p>不会，即使输入相同的参与者和结果，每次生成梯子时横线都会重新随机排列，因此每次结果都不同。这是因为每次执行都会生成独立的随机数，之前的结果不会影响下一次。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JAPANESE ===== -->
+    <div data-lang="ja" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+          <h1 class="policy-title">よくある質問</h1>
+          <p class="policy-date">あみだくじに関するよくある質問をすべてまとめました。</p>
+
+          <h2>基本的な使い方</h2>
+
+          <details class="faq-item">
+            <summary>あみだくじはどうやって使いますか？</summary>
+            <p>まず参加者の名前を入力し、結果項目を入力してから「くじを生成」ボタンをクリックします。くじが自動生成されたら、参加者の名前をクリックして個別の経路を確認するか、「全結果を見る」ボタンですべての結果を一度に確認できます。入力から結果確認まで30秒もかかりません。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>参加者は何人まで可能ですか？</summary>
+            <p>参加者数に厳密な制限はありません。ただし画面の見やすさと使いやすさを考えると、2人から10人が最適です。10人以上の場合、モバイルでは横スクロールが必要になることがあるため、グループ分けをお勧めします。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>結果項目はどのように入力しますか？</summary>
+            <p>結果欄に景品、当番、チーム名、罰ゲームなど、お好きな内容を自由に入力できます。参加者数と同じ数に揃えるのがベストで、不足分は自動的に「?」で埋められます。飲み会のメニュー、掃除エリア、役割分担など、何でも入力可能です。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>くじを作り直せますか？</summary>
+            <p>はい、「リセット」ボタンをクリックすると入力画面に戻り、新しいくじを生成できます。毎回まったく新しいランダムなくじが作られるため、結果も変わります。何度でも気軽に生成してください。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>結果を保存・共有できますか？</summary>
+            <p>現在、保存や共有の機能は提供されていません。結果を残したい場合はスクリーンショットでの保存をお勧めします。ブラウザを更新すると入力データとくじがすべてリセットされるため、重要な結果は必ず記録しておいてください。</p>
+          </details>
+
+          <h2>公平性と原理</h2>
+
+          <details class="faq-item">
+            <summary>結果は本当にランダムですか？</summary>
+            <p>はい、くじの横線はJavaScriptのMath.random()関数に基づいて毎回新しく生成されます。同じ参加者と結果を入力しても、生成するたびにまったく異なる配置になります。コンピュータの乱数生成器が人の意図やバイアスなしに横線の位置を決定するため、公平な結果が保証されます。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>あみだくじは数学的に公平ですか？</summary>
+            <p>あみだくじは数学的な順列（permutation）理論に基づいた公平な抽選方式です。各横線は隣接する2つの経路の位置を交換する互換の役割を果たし、十分な数の横線がランダムに配置されると、すべての参加者がすべての結果に等しい確率で割り当てられます。これは数学的に証明された原理です。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>誰かが結果を操作できますか？</summary>
+            <p>くじの横線はコンピュータの乱数生成器によって自動的に配置されるため、意図的に特定の結果を作り出すことは事実上不可能です。紙のくじと違い、デジタル方式では横線の位置を事前に知ったり操作したりすることはできません。全参加者が見ている前で実行すると、さらに信頼性が高まります。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>同じ入力で同じ結果になりますか？</summary>
+            <p>いいえ、同じ参加者と結果を入力しても、くじを生成するたびに横線が新たにランダム配置されるため、毎回異なる結果になります。これは実行ごとに独立した乱数が生成されるためで、以前の結果が次の結果に影響を与えることはありません。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD: between categories -->
+    <div class="ad-wrap">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7362975376492503"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- ===== KOREAN (part 2) ===== -->
+    <div data-lang="ko">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>기술적 질문</h2>
+
+          <details class="faq-item">
+            <summary>어떤 브라우저에서 작동하나요?</summary>
+            <p>Chrome, Firefox, Safari, Edge 등 모든 최신 브라우저에서 정상적으로 작동합니다. HTML5 Canvas를 사용하므로 최신 버전의 브라우저를 권장하며, Internet Explorer는 지원하지 않습니다. 브라우저를 최신 상태로 유지하면 가장 안정적인 경험을 할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>모바일에서도 사용할 수 있나요?</summary>
+            <p>네, 반응형 디자인이 적용되어 스마트폰과 태블릿에서도 편리하게 사용할 수 있습니다. 터치로 참가자 이름을 탭하면 경로가 표시되며, 참가자가 많을 경우 가로 스크롤로 전체 사다리를 확인할 수 있습니다. iOS Safari와 Android Chrome 모두 최적화되어 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>인터넷 없이도 사용 가능한가요?</summary>
+            <p>페이지가 한 번 로드된 이후에는 사다리 생성과 결과 확인 등 기본 기능은 오프라인에서도 사용할 수 있습니다. 다만 광고 표시, 댓글 기능, 웹 폰트 로딩 등 일부 외부 서비스는 인터넷 연결이 필요합니다. 오프라인 환경에서도 핵심 추첨 기능은 정상적으로 동작합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>개인정보가 수집되나요?</summary>
+            <p>사다리 타기에 입력하는 참가자 이름과 결과 항목은 서버에 전송되거나 저장되지 않으며, 모든 처리는 사용자의 브라우저에서만 이루어집니다. 다만 광고 서비스(Google AdSense)와 댓글 서비스(Disqus)에서 쿠키를 사용할 수 있습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a> 페이지를 참고해 주세요.</p>
+          </details>
+
+          <h2>활용 관련</h2>
+
+          <details class="faq-item">
+            <summary>어떤 상황에서 사다리 타기를 쓰면 좋나요?</summary>
+            <p>회식 메뉴 정하기, 청소 당번 배정, 팀 나누기, 발표 순서 정하기, 선물 교환 파트너 결정, 게임 캐릭터 배정 등 공정한 무작위 선택이 필요한 모든 상황에서 유용합니다. 학교, 직장, 모임 등 다양한 환경에서 누구나 쉽게 활용할 수 있습니다. 더 다양한 활용 사례는 <a href="guide.html">활용 가이드</a> 페이지에서 확인하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>대규모 인원에도 적합한가요?</summary>
+            <p>기술적으로는 대규모 인원도 처리할 수 있지만, 10명 이상일 경우 사다리가 복잡해져 가독성이 떨어질 수 있습니다. 20명 이상의 경우 5~10명씩 여러 그룹으로 나누어 각각 사다리를 진행하는 것을 권장합니다. 이렇게 하면 결과도 명확하고 참가자 모두가 과정을 쉽게 확인할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>사다리 타기 외에 다른 추첨 방법은?</summary>
+            <p>사다리 타기 외에도 제비뽑기, 룰렛, 동전 던지기, 주사위 굴리기 등 다양한 추첨 방법이 있습니다. 각 방법마다 장단점이 있으며, 상황에 따라 적합한 방법이 다릅니다. 각 추첨 방법의 특징과 비교는 <a href="tips.html">추첨 팁</a> 페이지에서 자세히 확인할 수 있습니다.</p>
+          </details>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ENGLISH (part 2) ===== -->
+    <div data-lang="en" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>Technical Questions</h2>
+
+          <details class="faq-item">
+            <summary>Which browsers are supported?</summary>
+            <p>The game works properly on all modern browsers including Chrome, Firefox, Safari, and Edge. It uses HTML5 Canvas, so we recommend keeping your browser up to date for the most stable experience. Internet Explorer is not supported.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I use it on mobile?</summary>
+            <p>Yes, the responsive design ensures comfortable use on smartphones and tablets. Tap a participant's name to reveal their path, and if there are many participants you can scroll horizontally to view the full ladder. Both iOS Safari and Android Chrome are fully optimized.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does it work offline?</summary>
+            <p>Once the page has been loaded, the core ladder generation and result-checking features work without an internet connection. However, ads, comments, and web font loading require connectivity. The essential drawing functionality operates normally even in offline environments.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is personal information collected?</summary>
+            <p>Participant names and result items you enter are never sent to or stored on any server -- all processing happens locally in your browser. Note that Google AdSense and Disqus may use cookies. Please see our <a href="privacy.html">Privacy Policy</a> page for details.</p>
+          </details>
+
+          <h2>Use Cases</h2>
+
+          <details class="faq-item">
+            <summary>When is the Ladder Game useful?</summary>
+            <p>It is perfect for choosing a restaurant for a team dinner, assigning cleaning duties, dividing teams, deciding presentation order, matching gift-exchange partners, assigning game characters, and any other situation requiring fair random selection. It can be used easily by anyone at school, work, or social gatherings. Check out our <a href="guide.html">Usage Guide</a> for more ideas.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is it suitable for large groups?</summary>
+            <p>Technically it can handle large groups, but with more than 10 participants the ladder becomes complex and harder to read. For 20 or more people, we recommend splitting into groups of 5 to 10 and running separate ladders. This keeps results clear and lets every participant easily follow the process.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What other random-selection methods exist?</summary>
+            <p>Besides the ladder game, there are drawing lots, roulette wheels, coin flips, dice rolls, and more. Each method has its own pros and cons, and the best choice depends on the situation. Visit our <a href="tips.html">Drawing Tips</a> page for a detailed comparison of each method.</p>
+          </details>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHINESE (part 2) ===== -->
+    <div data-lang="zh" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>技术问题</h2>
+
+          <details class="faq-item">
+            <summary>支持哪些浏览器？</summary>
+            <p>支持Chrome、Firefox、Safari、Edge等所有主流浏览器。由于使用了HTML5 Canvas，建议保持浏览器为最新版本以获得最稳定的体验。不支持Internet Explorer。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>可以在手机上使用吗？</summary>
+            <p>可以，响应式设计确保在智能手机和平板电脑上也能方便使用。点击参与者姓名即可显示路径，参与者较多时可横向滚动查看完整梯子。iOS Safari和Android Chrome均已优化。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>没有网络也能使用吗？</summary>
+            <p>页面加载后，梯子生成和结果确认等核心功能可以离线使用。但广告显示、评论功能、网页字体加载等部分外部服务需要网络连接。离线环境下核心抽签功能仍可正常运行。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>会收集个人信息吗？</summary>
+            <p>您输入的参与者姓名和结果项目不会被发送到服务器或存储，所有处理都在您的浏览器中完成。但Google AdSense广告服务和Disqus评论服务可能会使用Cookie。详情请参阅<a href="privacy.html">隐私政策</a>页面。</p>
+          </details>
+
+          <h2>应用场景</h2>
+
+          <details class="faq-item">
+            <summary>什么场景适合使用抽签梯子？</summary>
+            <p>选择聚餐菜单、分配打扫任务、分组、决定发言顺序、确定礼物交换对象、分配游戏角色等，任何需要公平随机选择的场景都非常实用。学校、职场、聚会等各种环境中都可以轻松使用。更多应用案例请查看<a href="guide.html">使用指南</a>。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>适合大规模人数吗？</summary>
+            <p>技术上可以处理大规模人数，但超过10人时梯子会变得复杂，可读性降低。20人以上建议分成5至10人的小组分别进行。这样结果更清晰，所有参与者都能轻松确认过程。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>除了抽签梯子还有其他抽签方法吗？</summary>
+            <p>除了梯子游戏，还有抽签、轮盘、掷硬币、掷骰子等多种抽签方法。每种方法各有优缺点，最佳选择取决于具体场景。各种抽签方法的特点和比较请查看<a href="tips.html">抽签技巧</a>页面。</p>
+          </details>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JAPANESE (part 2) ===== -->
+    <div data-lang="ja" style="display:none;">
+      <div class="card" style="margin-top:20px;">
+        <div class="policy-body" style="padding:40px;">
+
+          <h2>技術的な質問</h2>
+
+          <details class="faq-item">
+            <summary>どのブラウザで動作しますか？</summary>
+            <p>Chrome、Firefox、Safari、Edgeなど、すべての主要ブラウザで正常に動作します。HTML5 Canvasを使用しているため、最新バージョンのブラウザをお勧めします。Internet Explorerには対応していません。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>モバイルでも使えますか？</summary>
+            <p>はい、レスポンシブデザインにより、スマートフォンやタブレットでも快適にご利用いただけます。参加者の名前をタップすると経路が表示され、参加者が多い場合は横スクロールで全体のくじを確認できます。iOS SafariとAndroid Chromeの両方に最適化されています。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>オフラインでも使えますか？</summary>
+            <p>ページが一度読み込まれた後は、くじの生成や結果確認などの基本機能はオフラインでも使用できます。ただし、広告表示、コメント機能、Webフォント読み込みなど一部の外部サービスにはインターネット接続が必要です。オフライン環境でもコアの抽選機能は正常に動作します。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>個人情報は収集されますか？</summary>
+            <p>入力した参加者名と結果項目はサーバーに送信・保存されることはなく、すべての処理はブラウザ内で完結します。ただし、Google AdSense広告サービスとDisqusコメントサービスがCookieを使用する場合があります。詳細は<a href="privacy.html">プライバシーポリシー</a>ページをご確認ください。</p>
+          </details>
+
+          <h2>活用方法</h2>
+
+          <details class="faq-item">
+            <summary>どんな場面であみだくじが役立ちますか？</summary>
+            <p>飲み会のメニュー決め、掃除当番の割り当て、チーム分け、発表順序の決定、プレゼント交換の相手決め、ゲームキャラクターの割り当てなど、公平なランダム選択が必要なあらゆる場面で便利です。学校、職場、集まりなど様々な環境で誰でも簡単に活用できます。詳しい活用事例は<a href="guide.html">活用ガイド</a>をご覧ください。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>大人数にも適していますか？</summary>
+            <p>技術的には大人数にも対応できますが、10人以上になるとくじが複雑になり、見づらくなる場合があります。20人以上の場合は5〜10人ずつのグループに分けてそれぞれくじを行うことをお勧めします。そうすることで結果も明確になり、全参加者が過程を簡単に確認できます。</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>あみだくじ以外の抽選方法は？</summary>
+            <p>あみだくじの他にも、くじ引き、ルーレット、コイン投げ、サイコロなど、さまざまな抽選方法があります。各方法にはそれぞれ長所と短所があり、状況に応じて最適な方法が異なります。各抽選方法の特徴と比較は<a href="tips.html">抽選のコツ</a>ページで詳しくご確認いただけます。</p>
+          </details>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .page -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🪜 사다리 타기</div>
+      <nav class="footer-nav">
+        <a href="about.html">소개</a>
+        <a href="guide.html">활용 가이드</a>
+        <a href="tips.html">추첨 팁</a>
+        <a href="faq-detail.html">FAQ</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="mailto:contact@productbuilder.page">문의하기</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 ProductBuilder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script defer src="i18n-static.js"></script>
+</body>
+</html>

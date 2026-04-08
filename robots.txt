@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://productbuilder.page/sitemap.xml
+Sitemap: https://everythink-world.com/sitemap.xml
